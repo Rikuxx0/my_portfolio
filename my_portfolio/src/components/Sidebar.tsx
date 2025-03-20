@@ -1,7 +1,13 @@
 "use client"
 import * as React from 'react';
+import Avatar from '@mui/material/Avatar';
+import Box from '@mui/material/Box';
 import Button from '@mui/material/Button';
-import { Drawer } from '@mui/material';
+import Drawer from '@mui/material/Drawer';
+import Typography  from '@mui/material/Typography';
+import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
+import ArrowBackIosNewIcon from '@mui/icons-material/ArrowBackIosNew';
+
 
 export default function Sidebar() {
   const [open, setOpen] = React.useState(false);
@@ -13,17 +19,41 @@ export default function Sidebar() {
 
   const Drawerprofile = (
     <div>
-        簡単なプロフィールを書くところ
-    
-     <Button onClick={toggleDrawer}>Close drawer</Button> 
+      {/* ボタンをクリックするたびに開閉を切り替える */}
+      <Button onClick={toggleDrawer}>
+        <ArrowBackIosNewIcon />
+      </Button>
+      <Box>
+        <Avatar
+          alt="Riku Masukawa"
+          src='/my_icon.jpg'
+          sx={{ width: 100, height: 100 }}
+        />
+      </Box>
+      <Box sx={{width: '100%', maxWidth: 500}}>
+        <Typography variant="h4" gutterBottom>
+            Hello Everyone 
+        </Typography>
+        <Typography variant="body1" gutterBottom>
+            My name is Riku Masukawa. I'm Security geeker and work on various tools, software and pentration test. Nice to meet you.
+        </Typography>
+        <Typography variant="body1" gutterBottom>
+            趣味でペンテスやWeb開発をしてます。現在は大学生です。
+        </Typography>
+      </Box>
+      
+
+      
     </div>
-  );
+  );  
 
   
   return (
     <div>
       {/* ボタンをクリックするたびに開閉を切り替える */}
-      <Button onClick={toggleDrawer}>Open drawer</Button> 
+      <Button onClick={toggleDrawer}>
+        <ArrowForwardIosIcon />
+      </Button> 
 
       {/* DrawerのBackdropをカスタマイズして、背景が暗くならないようにする */}
       <Drawer 
