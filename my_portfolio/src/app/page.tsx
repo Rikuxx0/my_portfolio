@@ -1,6 +1,6 @@
 import Header from "../components/Header"
 import Sidebar from "@/components/Sidebar";
-import { Box } from "@mui/material";
+import { Box, Typography } from "@mui/material";
 
 export default function Page () {
   return (
@@ -12,6 +12,8 @@ export default function Page () {
             <Sidebar />
         </Box>
         <Header />
+
+        
         
     </div>
   );

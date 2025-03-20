@@ -9,7 +9,6 @@ import Typography  from '@mui/material/Typography';
 import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
 import ArrowBackIosNewIcon from '@mui/icons-material/ArrowBackIosNew';
 import GitHubIcon from '@mui/icons-material/GitHub';
-import { Rowdies } from 'next/font/google';
 
 
 export default function Sidebar() {
@@ -27,11 +26,11 @@ export default function Sidebar() {
         <ArrowBackIosNewIcon />
       </Button>
 
-      <Stack direction="row" spacing={3}>
+      <Stack direction="row" spacing={2}>
         <Avatar
           alt="Riku Masukawa"
           src='/my_icon.jpg'
-          sx={{ width: 120, height: 120 }}
+          sx={{ width: 120, height: 120, ml: 3}}
         />
 
         <Box
@@ -59,19 +58,19 @@ export default function Sidebar() {
       
       <Stack direction="column" spacing={1}>
         <Stack direction="row" spacing={2}>
-          <Button>
+          <Button href="https://github.com/Rikuxx0">
               <GitHubIcon />
           </Button>
         </Stack>
 
         <Box sx={{width: '100%', maxWidth: 500}}>
-          <Typography variant="h4" gutterBottom>
+          <Typography variant="h4" align='center' gutterBottom>
               Hello Everyone 
           </Typography>
-          <Typography variant="body1" gutterBottom>
+          <Typography variant="body1" align='center' gutterBottom>
               My name is Riku Masukawa. I'm Security geeker and work on various tools, software and pentration test. Nice to meet you.
           </Typography>
-          <Typography variant="body1" gutterBottom>
+          <Typography variant="body1" align='center' gutterBottom>
               趣味でペンテスやWeb開発をしてます。現在は大学生です。
           </Typography>
         </Box>
