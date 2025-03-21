@@ -1,27 +1,29 @@
-import Header from "../components/Header"
+import * as React from 'react';
+import Header from "../components/Header";
 import Sidebar from "@/components/Sidebar";
 import { Box, Typography, Container, List, ListItem, ListItemText, Paper} from "@mui/material";
+import CssBaseline from '@mui/material/CssBaseline';
 
 const achievements = [
-  "TryHackMe [GUARDIAN] - 世界2825位、日本50位 (2024年12月 日本1位獲得経験あり)",
+  "２週間オーストラリア語学留学",
   "CpawCTF - リバースエンジニアリング以外の全問クリア",
   "ACSC 参加",
   "SECCON Beginners CTF 2023 ワークショップ参加",
-  "セキュリティ・ミニキャンプ in 三重 2024 参加",
-  "Python製インジェクション特化のファジングツール開発",
-  "Rust製インジェクション特化のファジングツール開発",
-  "HackComAPP 開発予定",
   "英検2級取得 (準1級CSEスコア 2186)",
-  "2週間オーストラリア語学留学",
+  "セキュリティ・ミニキャンプ in 三重 2024 参加",
+  "TryHackMe [GUARDIAN] - 世界2825位、日本50位 (2024年12月 日本1位獲得経験あり)",
   "駒澤大学グローバル・メディア・スタディーズ学部 入学予定 (2025年4月)"
 ];
 
 const skills = [
-
+  "Programing",
+  "Python/TypeScript/Bash/Rust/SQL/PHP ....etc"
 ];
 
 const projects = [
-
+  "Python製インジェクション特化のファジングツール開発",
+  "Rust製インジェクション特化のファジングツール開発",
+  "HackComAPP 開発予定",
 ]
 
 
@@ -29,6 +31,7 @@ const projects = [
 export default function Page () {
   return (
     <div>
+      <React.Fragment>
         <Box sx={{
             mt: 10
         }}
@@ -36,7 +39,10 @@ export default function Page () {
             <Sidebar />
         </Box>
         <Header />
-
+        <CssBaseline />
+        <Container fixed>
+            <Box sx={{ bgcolor: '#cfe8fc', height: '100vh',  width: '150vh' }} />
+        </Container>
 
 
 
@@ -86,7 +92,7 @@ export default function Page () {
           </Paper>
         </Container>
         
-        
+      </React.Fragment>
     </div>
   );
 }
