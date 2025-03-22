@@ -1,8 +1,8 @@
 import * as React from 'react';
 import Header from "../components/Header";
-import Sidebar from "@/components/Sidebar";
-import { Box, Typography, Container, List, ListItem, ListItemText, Paper} from "@mui/material";
-import CssBaseline from '@mui/material/CssBaseline';
+
+import { Box, Typography, Container, List, ListItem, ListItemText, Paper, Stack} from "@mui/material";
+
 
 const achievements = [
   "２週間オーストラリア語学留学",
@@ -30,70 +30,70 @@ const projects = [
 
 export default function Page () {
   return (
-    <div>
       <React.Fragment>
-        <Box sx={{
-            mt: 10
-        }}
-        >
-            <Sidebar />
-        </Box>
-        <Header />
-        <CssBaseline />
-        <Container fixed>
-            <Box sx={{ bgcolor: '#cfe8fc', height: '100vh',  width: '150vh' }} />
-        </Container>
+            {/**挿絵 */}
+            <Box
+              sx={{
+                  backgroundColor: '#cfe8fc',
+                  width: "100%",
+                  height: "100vh",
+                  backgroundImage: 'url("/images/background.jpg")', // 画像のパス
+                  backgroundSize: "cover",
+                  backgroundPosition: "center",
+                  backgroundRepeat: "no-repeat",
+              }}
+            />
+              <Header />
 
+              <Container maxWidth="md" sx={{ mt: 4}}>
+                <Paper sx={{ p: 3 }}>
+                  <Typography variant="h4" gutterBottom>
+                    Record
+                  </Typography>
+                  <List>  
+                    {achievements.map((achievement, index) => (
+                      <ListItem key={index}>
+                        <ListItemText primary={achievement} />
+                      </ListItem>
+                    ))}
+                  </List>
+                </Paper>
+              </Container>
 
+              <Container maxWidth="md" sx={{ mt: 4 }}>
+                <Paper sx={{ p: 3 }}>
+                  <Typography variant="h4" gutterBottom>
+                    Skill
+                  </Typography>
+                  <List>
+                    {skills.map((skills, index) => (
+                      <ListItem key={index}>
+                        <ListItemText primary={skills} />
+                      </ListItem>
+                    ))}
+                  </List>
+                </Paper>
+              </Container>
 
-
-
-
-        <Container maxWidth="md" sx={{ mt: 4 }}>
-          <Paper sx={{ p: 3 }}>
-            <Typography variant="h4" gutterBottom>
-              Record
-            </Typography>
-            <List>
-              {achievements.map((achievement, index) => (
-                <ListItem key={index}>
-                  <ListItemText primary={achievement} />
-                </ListItem>
-              ))}
-            </List>
-          </Paper>
-        </Container>
-        <Container maxWidth="md" sx={{ mt: 4 }}>
-          <Paper sx={{ p: 3 }}>
-            <Typography variant="h4" gutterBottom>
-              Skill
-            </Typography>
-            <List>
-              {skills.map((skills, index) => (
-                <ListItem key={index}>
-                  <ListItemText primary={skills} />
-                </ListItem>
-              ))}
-            </List>
-          </Paper>
-        </Container>
-        <Container maxWidth="md" sx={{ mt: 4 }}>
-          <Paper sx={{ p: 3 }}>
-            <Typography variant="h4" gutterBottom>
-              Project
-            </Typography>
-            <List>
-              {projects.map((projects, index) => (
-                <ListItem key={index}>
-                  <ListItemText primary={projects} />
-                </ListItem>
-              ))}
-            </List>
-          </Paper>
-        </Container>
-        
+              <Container maxWidth="md" sx={{ mt: 4 }}>
+                <Paper sx={{ p: 3 }}>
+                  <Typography variant="h4" gutterBottom>
+                    Project
+                  </Typography>
+                  <List>
+                    {projects.map((projects, index) => (
+                      <ListItem key={index}>
+                        <ListItemText primary={projects} />
+                      </ListItem>
+                    ))}
+                  </List>
+                </Paper>
+              </Container>
+            
+          
+      
       </React.Fragment>
-    </div>
+  
   );
 }
 

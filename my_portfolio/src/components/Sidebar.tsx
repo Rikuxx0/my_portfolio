@@ -6,7 +6,7 @@ import Button from '@mui/material/Button';
 import Drawer from '@mui/material/Drawer';
 import Stack  from '@mui/material/Stack';
 import Typography  from '@mui/material/Typography';
-import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
+import Grid4x4OutlinedIcon from '@mui/icons-material/Grid4x4Outlined';
 import ArrowBackIosNewIcon from '@mui/icons-material/ArrowBackIosNew';
 import GitHubIcon from '@mui/icons-material/GitHub';
 
@@ -86,7 +86,8 @@ export default function Sidebar() {
     <div>
       {/* ボタンをクリックするたびに開閉を切り替える */}
       <Button onClick={toggleDrawer}>
-        <ArrowForwardIosIcon />
+        {/**ヘッダーと同色になる難あり */}
+        <Grid4x4OutlinedIcon />
       </Button> 
 
       {/* DrawerのBackdropをカスタマイズして、背景が暗くならないようにする */}
