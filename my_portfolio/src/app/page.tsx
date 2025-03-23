@@ -1,7 +1,6 @@
 import * as React from 'react';
 import Header from "../components/Header";
-
-import { Box, Typography, Container, List, ListItem, ListItemText, Paper, Stack} from "@mui/material";
+import { Box, Typography, Container, List, ListItem, ListItemText, Paper} from "@mui/material";
 
 
 const achievements = [
@@ -31,18 +30,39 @@ const projects = [
 export default function Page () {
   return (
       <React.Fragment>
-            {/**挿絵 */}
-            <Box
-              sx={{
-                  backgroundColor: '#cfe8fc',
-                  width: "100%",
-                  height: "100vh",
-                  backgroundImage: 'url("/images/background.jpg")', // 画像のパス
-                  backgroundSize: "cover",
-                  backgroundPosition: "center",
-                  backgroundRepeat: "no-repeat",
-              }}
-            />
+            {/*　動画の背景 */}   {/**id入れ　→ 動画が小さくなるも問題あり */}
+            <Container>
+              <Box
+                sx={{
+                    position: "relative",
+                    width: "100%",
+                    height: "100vh",
+                }}
+              >
+              
+                {/** 背景動画 */}
+                <video
+                  autoPlay
+                  loop
+                  muted
+                  playsInline
+                  style={{
+                    position: "absolute",
+                    top: "50%",
+                    left: "50%",
+                    width: "100%",
+                    height: "100%",
+                    objectFit: "cover",
+                    transform: "translate(-50%, -50%)",
+                    zIndex: -1,
+                  }}
+                >
+                  <source src="/videos/intro.mp4" type="video/mp4" />
+                  Your browser does not support th video tag.
+                </video>
+              </Box>
+            </Container>
+
               <Header />
 
               <Container maxWidth="md" sx={{ mt: 4}}>

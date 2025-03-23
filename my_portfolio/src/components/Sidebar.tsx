@@ -9,6 +9,7 @@ import Typography  from '@mui/material/Typography';
 import Grid4x4OutlinedIcon from '@mui/icons-material/Grid4x4Outlined';
 import ArrowBackIosNewIcon from '@mui/icons-material/ArrowBackIosNew';
 import GitHubIcon from '@mui/icons-material/GitHub';
+import { colors } from '@mui/material';
 
 
 export default function Sidebar() {
@@ -85,9 +86,9 @@ export default function Sidebar() {
   return (
     <div>
       {/* ボタンをクリックするたびに開閉を切り替える */}
-      <Button onClick={toggleDrawer}>
+      <Button onClick={toggleDrawer} >
         {/**ヘッダーと同色になる難あり */}
-        <Grid4x4OutlinedIcon />
+        <Grid4x4OutlinedIcon color="action" />
       </Button> 
 
       {/* DrawerのBackdropをカスタマイズして、背景が暗くならないようにする */}

@@ -24,7 +24,13 @@ interface Props {
   }
   
   const drawerWidth = 240;
-  const navItems = ['Home', 'Record', 'Skill', 'Project','Contact'];
+  const navItems = [
+    {label: "Home", id: "home"},
+    {label: "Record", id: "record"},
+    {label: "Skill", id: "skill"},
+    {label: "Project", id: "project"},
+    {label: "Contact", id: "contact"},
+  ]
 
 
   export default function Header(props: Props) {
@@ -43,9 +49,11 @@ interface Props {
         <Divider />
         <List>
           {navItems.map((item) => (
-            <ListItem key={item} disablePadding>
+            <ListItem key={item.id} disablePadding>
               <ListItemButton sx={{ textAlign: 'center' }}>
-                <ListItemText primary={item} />
+                <a href={`#${item.id}`} style={{ textDecoration: "none", color: "inherit" }}>
+                  <ListItemText primary={item.label} />
+                </a>
               </ListItemButton>
             </ListItem>
           ))}
@@ -77,8 +85,8 @@ interface Props {
             </Typography>
             <Box sx={{ display: { xs: 'none', sm: 'block' } }}>
               {navItems.map((item) => (
-                <Button key={item} sx={{ color: '#fff' }}>
-                  {item}
+                <Button key={item.id} sx={{ color: '#fff' }}>
+                  {item.label}
                 </Button>
               ))}
             </Box>
