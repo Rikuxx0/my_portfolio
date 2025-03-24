@@ -1,6 +1,7 @@
 import * as React from 'react';
 import Header from "../components/Header";
-import { Box, Typography, Container, List, ListItem, ListItemText, Paper} from "@mui/material";
+import Contact from '@/components/Contact';
+import { Box, Typography, Container, List, ListItem, ListItemText, Paper } from "@mui/material";
 
 
 const achievements = [
@@ -131,13 +132,12 @@ export default function Page () {
               </Container>
 
               <Container maxWidth="md" sx={{ mt: 4 }} id="contact">
-              <Paper sx={{ p: 3 }}>
-                  <Typography variant="h4" gutterBottom>
-                    Contact
-                  </Typography>
-                  {/**メール送信の仕組みを作る */}
-
-                  
+                <Paper sx={{ p: 3 }}>
+                    <Typography variant="h4" gutterBottom>
+                      Contact
+                    </Typography>
+                    {/**メール送信の仕組みを作る */}
+                    <Contact />
                 </Paper>
               </Container>
       </React.Fragment>
