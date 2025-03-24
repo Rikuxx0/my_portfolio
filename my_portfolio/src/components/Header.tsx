@@ -40,7 +40,15 @@ interface Props {
     const handleDrawerToggle = () => {
       setMobileOpen((prevState) => !prevState);
     };
-  
+
+    // セクションへスクロールする関数
+    const scrollToSection = (id: string) => {
+      const section = document.getElementById(id);
+      if (section) {
+        section.scrollIntoView({ behavior: "smooth", block: "center" });
+      }
+    };
+    
     const drawer = (
       <Box onClick={handleDrawerToggle} sx={{ textAlign: 'center' }}>
         <Typography variant="h6" sx={{ my: 2 }}>
@@ -50,10 +58,8 @@ interface Props {
         <List>
           {navItems.map((item) => (
             <ListItem key={item.id} disablePadding>
-              <ListItemButton sx={{ textAlign: 'center' }}>
-                <a href={`#${item.id}`} style={{ textDecoration: "none", color: "inherit" }}>
+              <ListItemButton onClick={() => scrollToSection(item.id)} sx={{ textAlign: 'center' }}>
                   <ListItemText primary={item.label} />
-                </a>
               </ListItemButton>
             </ListItem>
           ))}
@@ -85,7 +91,7 @@ interface Props {
             </Typography>
             <Box sx={{ display: { xs: 'none', sm: 'block' } }}>
               {navItems.map((item) => (
-                <Button key={item.id} sx={{ color: '#fff' }}>
+                <Button key={item.id} sx={{ color: '#fff' }} onClick={() => scrollToSection(item.id)}>
                   {item.label}
                 </Button>
               ))}

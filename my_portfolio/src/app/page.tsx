@@ -30,8 +30,7 @@ const projects = [
 export default function Page () {
   return (
       <React.Fragment>
-            {/*　動画の背景 */}   {/**id入れ　→ 動画が小さくなるも問題あり */}
-            <Container>
+            {/*　動画の背景 */}   
               <Box
                 sx={{
                     position: "relative",
@@ -42,6 +41,7 @@ export default function Page () {
               
                 {/** 背景動画 */}
                 <video
+                  id='home'
                   autoPlay
                   loop
                   muted
@@ -60,12 +60,32 @@ export default function Page () {
                   <source src="/videos/intro.mp4" type="video/mp4" />
                   Your browser does not support th video tag.
                 </video>
+
+                {/**動画の上のテキスト */}
+                <Box
+                  sx={{
+                    position: "absolute",
+                    top: "50%",
+                    left: "50%",
+                    transform: "translate(-50%, -50%)",
+                    color: "white",
+                    textAlign: "center",
+                    zIndex: 1, //動画より前面に配置
+                  }}
+                  >
+                    <Typography variant="h3" fontWeight="bold">
+                      Welcome to My Portfolio
+                    </Typography>
+                    <Typography variant="h5">
+                      Exploring Security & Development
+                    </Typography>
+                </Box>
               </Box>
-            </Container>
+            
 
               <Header />
 
-              <Container maxWidth="md" sx={{ mt: 4}}>
+              <Container maxWidth="md" sx={{ mt: 4}} id="record">
                 <Paper sx={{ p: 3 }}>
                   <Typography variant="h4" gutterBottom>
                     Record
@@ -80,7 +100,7 @@ export default function Page () {
                 </Paper>
               </Container>
 
-              <Container maxWidth="md" sx={{ mt: 4 }}>
+              <Container maxWidth="md" sx={{ mt: 4 }} id="skill">
                 <Paper sx={{ p: 3 }}>
                   <Typography variant="h4" gutterBottom>
                     Skill
@@ -95,7 +115,7 @@ export default function Page () {
                 </Paper>
               </Container>
 
-              <Container maxWidth="md" sx={{ mt: 4 }}>
+              <Container maxWidth="md" sx={{ mt: 4 }} id="project">
                 <Paper sx={{ p: 3 }}>
                   <Typography variant="h4" gutterBottom>
                     Project
@@ -109,11 +129,19 @@ export default function Page () {
                   </List>
                 </Paper>
               </Container>
-            
-          
-      
+
+              <Container maxWidth="md" sx={{ mt: 4 }} id="contact">
+              <Paper sx={{ p: 3 }}>
+                  <Typography variant="h4" gutterBottom>
+                    Contact
+                  </Typography>
+                  {/**メール送信の仕組みを作る */}
+
+                  
+                </Paper>
+              </Container>
       </React.Fragment>
-  
+
   );
 }
 
