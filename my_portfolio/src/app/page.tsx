@@ -31,7 +31,7 @@ const projects = [
 
 export default function Page () {
   return (
-      <React.Fragment>
+    <React.Fragment>
             {/*　動画の背景 */}   
               <Box
                 sx={{
@@ -141,7 +141,7 @@ export default function Page () {
                     <Contact />
                 </Paper>
               </Container>
-      </React.Fragment>
+     </React.Fragment>
 
   );
 }

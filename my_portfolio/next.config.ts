@@ -5,7 +5,7 @@ const nextConfig: NextConfig = {
   async headers() {
     return [
       {
-        source: "/(.*)", //全てのページにCSPを適応 //nonceの導入を検討
+        source: "/(.*)",
         headers: [
           {
             key: "Content-Security-Policy",
@@ -17,11 +17,11 @@ const nextConfig: NextConfig = {
               img-src 'self' data:;
               connect-src 'self';
             `.replace(/\s{2,}/g, " ").trim(),
-          }
-        ]
-      }
-    ]
-  }
+          },
+        ],
+      },
+    ];
+  },
 };
 
 export default nextConfig;
