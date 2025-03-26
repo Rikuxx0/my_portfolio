@@ -18,7 +18,7 @@ export default function Contact() {
         e.preventDefault();
 
         try {
-            const response = await fetch("api/contact", {
+            const response = await fetch("/api/contact", {
                 method: "POST",
                 headers: {"Content-Type": "application/json"},
                 body: JSON.stringify(formData),
@@ -28,7 +28,7 @@ export default function Contact() {
                 setStatus({type: "success", message: "Send email"});
                 setFormData({name: "", email: "", message: "" });
             } else {
-                setStatus({type: "error", message: "failed sending email"});
+                setStatus({type: "error", message: "Failed sending email"});
             } 
         }
         catch (error) {
@@ -36,15 +36,16 @@ export default function Contact() {
         }
     };
 
+
     return (
         
             <Box sx={{ maxWidth: 500, margin: "auto", p: 3, textAlign: "center"}}>
                 {status.message && <Alert severity={status.type === "success" ? "success" : "error"}>{status.message}</Alert>}
                 <form onClick={handleSubmit}>
-                    <TextField fullWidth margin="normal" label="Name" name="name" value={formData.name} onChange={handleChange} required/>
-                    <TextField fullWidth margin="normal" label="Email" name="email" value={formData.email} onChange={handleChange} required type="email" />
-                    <TextField fullWidth margin="normal" label="Message" name="message" value={formData.message} onChange={handleChange} required multiline rows={4} />
-                    <Button type="submit" variant="contained" color="primary" sx={{ mt: 2 }}>Send</Button>
+                    <TextField fullWidth margin="normal" label="Name" name="name" value={formData.name} onChange={handleChange} sx={{bgcolor: "white", borderRadius: "5px", input: { color: "black "}}} required/>
+                    <TextField fullWidth margin="normal" label="Email" name="email" value={formData.email} onChange={handleChange} sx={{bgcolor: "white", borderRadius: "5px", input: { color: "black "}}} required type="email" />
+                    <TextField fullWidth margin="normal" label="Message" name="message" value={formData.message} onChange={handleChange} sx={{bgcolor: "white", borderRadius: "5px", input: { color: "black "}}} required multiline rows={4} />
+                    <Button fullWidth type="submit" variant="contained" color="success" sx={{ mt: 2 }}>Send</Button>
                 </form>
             </Box>
     

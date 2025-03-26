@@ -72,7 +72,7 @@ interface Props {
     return (
       <Box sx={{ display: 'flex' }}>
         <CssBaseline />
-        <AppBar component="nav">
+        <AppBar component="nav" color=''> {/**カスタムテーマを使うこと　あと　プログラミング言語のアイコン貼り付けすること */}
           <Toolbar>
             <IconButton
               color="inherit"
@@ -91,13 +91,15 @@ interface Props {
             </Typography>
             <Box sx={{ display: { xs: 'none', sm: 'block' } }}>
               {navItems.map((item) => (
-                <Button key={item.id} sx={{ color: '#fff' }} onClick={() => scrollToSection(item.id)}>
+                <Button  variant="text" key={item.id} sx={{ color: '#fff', fontFamily: "system-ui" }} onClick={() => scrollToSection(item.id)}>
                   {item.label}
                 </Button>
               ))}
             </Box>
           </Toolbar>
         </AppBar>
+
+
         <nav>
           <Drawer
             container={container}

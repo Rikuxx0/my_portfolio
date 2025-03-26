@@ -8,6 +8,10 @@ export async function POST(req: Request) {
         return NextResponse.json({ error: "Please enter all items "}, {status: 400 });
     }
 
+    console.log("EMAIL_USER:", process.env.EMAIL_USER);
+    console.log("EMAIL_PASS:", process.env.EMAIL_PASS ? "******" : "undefined");
+
+
     try {
         const transporter = nodemailer.createTransport({
             service: "gmail",
@@ -16,6 +20,7 @@ export async function POST(req: Request) {
                 pass: process.env.EMAIL_PASS,
             },
         });
+        
 
         await transporter.sendMail({
             from: process.env.EMAIL_USER,
@@ -27,6 +32,10 @@ export async function POST(req: Request) {
         return NextResponse.json({ success: "Send email"});
     }
     catch(error) {
+        console.error("Failed sending email:", error);
         return NextResponse.json({ error: "Failed sending email"}, { status: 500 });
     }
 }
+
+
+//smtpプロトコルを使ってGmail送信すること

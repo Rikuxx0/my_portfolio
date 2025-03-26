@@ -2,7 +2,8 @@
 import * as React from 'react';
 import Header from "../components/Header";
 import Contact from '@/components/Contact';
-import { Box, Typography, Container, List, ListItem, ListItemText, Paper } from "@mui/material";
+import { Box, Typography, Container, List, ListItem, ListItemText, Stack } from "@mui/material";
+import zIndex from '@mui/material/styles/zIndex';
 
 
 const achievements = [
@@ -17,10 +18,17 @@ const achievements = [
 ];
 
 const skills = [
-  "Programing",
-  "Python/TypeScript/Bash/Rust/SQL/PHP ....etc"
-];
+  "Python",
+  "TypeScript",
+  "Rust",
+  "Bash",
+  "Assembly/C language",
+  "PHP",
+  "HTML/CSS",
+  "SQL",
+  "....etc"
 
+]
 const projects = [
   "Python製インジェクション特化のファジングツール開発",
   "Rust製インジェクション特化のファジングツール開発",
@@ -71,14 +79,15 @@ export default function Page () {
                     left: "50%",
                     transform: "translate(-50%, -50%)",
                     color: "white",
+                    textShadow: "1px 1px 1px rgba(141, 136, 136, 0.56), -2px -2px 3px rgba(52, 51, 51, 0.5), -2px 2px 3px rgba(49, 48, 48, 0.5), 2px -2px 3px rgba(29, 28, 28, 0.5)",
                     textAlign: "center",
                     zIndex: 1, //動画より前面に配置
                   }}
                   >
-                    <Typography variant="h3" fontWeight="bold">
+                    <Typography variant="h3" fontWeight="bold" sx={{ mt: 0}}>
                       Welcome to My Portfolio
                     </Typography>
-                    <Typography variant="h5">
+                    <Typography variant="h5" >
                       Exploring Security & Development
                     </Typography>
                 </Box>
@@ -87,60 +96,91 @@ export default function Page () {
 
               <Header />
 
-              <Container maxWidth="md" sx={{ mt: 4}} id="record">
-                <Paper sx={{ p: 3 }}>
-                  <Typography variant="h4" gutterBottom>
-                    Record
-                  </Typography>
-                  <List>  
-                    {achievements.map((achievement, index) => (
-                      <ListItem key={index}>
-                        <ListItemText primary={achievement} />
-                      </ListItem>
-                    ))}
-                  </List>
-                </Paper>
-              </Container>
-
-              <Container maxWidth="md" sx={{ mt: 4 }} id="skill">
-                <Paper sx={{ p: 3 }}>
-                  <Typography variant="h4" gutterBottom>
-                    Skill
-                  </Typography>
-                  <List>
-                    {skills.map((skills, index) => (
-                      <ListItem key={index}>
-                        <ListItemText primary={skills} />
-                      </ListItem>
-                    ))}
-                  </List>
-                </Paper>
-              </Container>
-
-              <Container maxWidth="md" sx={{ mt: 4 }} id="project">
-                <Paper sx={{ p: 3 }}>
-                  <Typography variant="h4" gutterBottom>
-                    Project
-                  </Typography>
-                  <List>
-                    {projects.map((projects, index) => (
-                      <ListItem key={index}>
-                        <ListItemText primary={projects} />
-                      </ListItem>
-                    ))}
-                  </List>
-                </Paper>
-              </Container>
-
-              <Container maxWidth="md" sx={{ mt: 4 }} id="contact">
-                <Paper sx={{ p: 3 }}>
+              <Box sx={{ bgcolor: "white", color: "black", py: 6,  mr: 80}} id="record">
+                <Container>
+                  <Box sx={{ p: 3 }}>
                     <Typography variant="h4" gutterBottom>
-                      Contact
+                      Record
                     </Typography>
-                    {/**メール送信の仕組みを作る */}
-                    <Contact />
-                </Paper>
-              </Container>
+                    <List>
+                      {achievements.map((achievement, index) => (
+                        <ListItem key={index}>
+                          <ListItemText primary={achievement} />
+                        </ListItem>
+                      ))}
+                    </List>
+                  </Box>
+                </Container>
+              </Box>
+
+              {/* 黒線 */}
+              <Box sx={{ width: "100%", height: "4px", bgcolor: "black" }} />
+
+              <Box sx={{ bgcolor: "black", color: "white", py: 6, }} id="skill">
+                <Container>
+                    <Typography variant="h4" sx={{ textAlign: "right", pr: 51 }} gutterBottom>
+                      Skill
+                    </Typography>
+                    <Typography variant="h4" sx={{ textAlign: "right", pr: 36 }}>
+                      Programing
+                    </Typography>
+                    <List>
+                      {skills.map((skills, index) => (
+                        <ListItem key={index}>
+                          <ListItemText primary={skills}
+                             sx={{ ml: 85 }}// 文字だけを右寄せ
+                          />
+                        </ListItem>
+                      ))}
+                    </List>
+                </Container>
+              </Box>
+
+              {/* 黒線 */}
+              <Box sx={{ width: "100%", height: "4px", bgcolor: "black" }} />
+
+              {/* Project セクション（白背景） */}
+              <Box sx={{ bgcolor: "white", color: "black", py: 6, mr: 80 }} id="project">
+                <Container>
+                  <Box sx={{ p: 3 }}>
+                    <Typography variant="h4" gutterBottom>
+                      Project
+                    </Typography>
+                    <List>
+                      {projects.map((projects, index) => (
+                        <ListItem key={index}>
+                          <ListItemText primary={projects} />
+                        </ListItem>
+                      ))}
+                    </List>
+                  </Box>
+                </Container>
+              </Box>
+
+              {/* 黒線 */}
+              <Box sx={{ width: "100%", height: "4px", bgcolor: "black" }} />
+
+              {/* Contact セクション（黒背景・白文字） */}
+              <Box sx={{ bgcolor: "black", color: "white", py: 6, zIndex: -1}} id="contact">
+                  <Container>
+                    <Stack direction="row" spacing={4} alignItems="center" justifyContent="space-between">
+                      {/* 左側にテキスト */}
+                      <Box sx={{ width: "40%" }}>
+                        <Typography variant="h4" gutterBottom>
+                          Contact
+                        </Typography>
+                        <Typography variant="h6">
+                          お仕事があれば、お願い致します。
+                        </Typography>
+                      </Box>
+
+                      {/* 右側にContactフォーム */}
+                      <Box sx={{ width: "50%" }}>
+                        <Contact />
+                      </Box>
+                    </Stack>
+                  </Container>
+              </Box>
      </React.Fragment>
 
   );
