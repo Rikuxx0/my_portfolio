@@ -1,74 +1,44 @@
 "use client";
 import React, {useState} from "react";
-import { Box, TextField, Button, Typography, Alert } from "@mui/material";
+import { Box, TextField, Button, Alert } from "@mui/material";
 
 export default function Contact() {
-    const [formData, setFormData] = useState({
-        name: "",
-        email: "",
-        message: "",
-    });
-    const [status, setStatus] = useState({type: "", message: "" });
+    const [formData, setFormData] = useState({ name: "", email: "", message: "" });
+    const [loading, setLoading] = useState(false);
+    const [response, setResponse] = useState("");
 
     const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-        setFormData({...formData, [e.target.name]: e.target.value});
-    }
+        setFormData({ ...formData, [e.target.name]: e.target.value });
+    };
 
     const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
+        setLoading(true);
+        setResponse("");
 
-        try {
-            const response = await fetch("api/contact/", {
-                method: "POST",
-                headers: {"Content-Type": "application/json"},
-                body: JSON.stringify(formData),
-            });
+        const res = await fetch("/api/contact", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify(formData),
+        });
 
-            if (response.ok) {
-                setStatus({type: "success", message: "Send email"});
-                setFormData({name: "", email: "", message: "" });
-            } else {
-                setStatus({type: "error", message: "Failed sending email"});
-            } 
-        }
-        catch (error) {
-            setStatus({type: "error", message: "Sending ERROR"})
-        }
+        const data = await res.json();
+        setResponse(data.success || data.error);
+        setLoading(false);
     };
 
-
     return (
-        
-            <Box sx={{ maxWidth: 500, margin: "auto", p: 3, textAlign: "center"}}>
-                {status.message && <Alert severity={status.type === "success" ? "success" : "error"}>{status.message}</Alert>}
-                <form onClick={handleSubmit}>
-                    <TextField fullWidth margin="normal" label="Name" name="name" value={formData.name} onChange={handleChange} sx={{bgcolor: "white", borderRadius: "5px", input: { color: "black "}}} required/>
-                    <TextField fullWidth margin="normal" label="Email" name="email" value={formData.email} onChange={handleChange} sx={{bgcolor: "white", borderRadius: "5px", input: { color: "black "}}} required type="email" />
-                    <TextField fullWidth margin="normal" label="Message" name="message" value={formData.message} onChange={handleChange} sx={{bgcolor: "white", borderRadius: "5px", input: { color: "black "}}} required multiline rows={4} />
-                    <Button fullWidth type="submit" variant="contained" color="success" sx={{ mt: 2 }}>Send</Button>
-                </form>
-            </Box>
-    
+       
+        <Box component="form" onSubmit={handleSubmit} sx={{ display: "flex", flexDirection: "column", gap: 2, maxWidth: 400, mx: "auto" }}>
+            {response && <Alert severity={response.includes("Failed") ? "error" : "success"}>{response}</Alert>}
+            <TextField name="name" label="Your Name" onChange={handleChange} sx={{bgcolor: "white", borderRadius: "5px", input: { color: "black "}}} required fullWidth />
+            <TextField name="email" type="email" label="Your Email" onChange={handleChange} sx={{bgcolor: "white", borderRadius: "5px", input: { color: "black "}}} required fullWidth />
+            <TextField name="message" label="Your Message" multiline rows={4} onChange={handleChange} sx={{bgcolor: "white", borderRadius: "5px", input: { color: "black "}}} required fullWidth />
+            <Button type="submit" variant="contained" color="success" disabled={loading}>
+                {loading ? "Sending..." : "Send Message"}
+            </Button>
+            
+        </Box>
     );
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    
 }

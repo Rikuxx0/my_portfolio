@@ -5,7 +5,7 @@ export async function POST(req: Request) {
     const { name, email, message } = await req.json();
 
     if (!name || !email || !message ) {
-        return NextResponse.json({ error: "Please enter all items "}, {status: 400 });
+        return NextResponse.json({ error: "Please enter all required fieids."}, {status: 400 });
     }
 
     console.log("EMAIL_USER:", process.env.EMAIL_USER);
@@ -14,25 +14,24 @@ export async function POST(req: Request) {
 
     try {
         const transporter = nodemailer.createTransport({
-            service: "gmail",
+            host: "smtp.gmail.com",
+            port: 465,
+            secure: true, //  SSL/TLSを使用
             auth: {
                 user: process.env.EMAIL_USER, //環境変数で設定
                 pass: process.env.EMAIL_PASS,
-            },
-            tls: {
-                rejectUnauthorized: false,  // SSL/TLSの警告を無視する
             },
         });
         
 
         await transporter.sendMail({
-            from: process.env.EMAIL_USER,
+            from: ` "${name}" <${process.env.EMAIL_USER}>`,
             to: "hakokuro8@gmail.com", //受信先
             subject: "ポートフォリオからの問い合わせ",
             text: `名前: ${name}\nメール: ${email}\nメッセージ: ${message}`,
         });
 
-        return NextResponse.json({ success: "Send email"});
+        return NextResponse.json({ success: "Email Sent successfully"});
     }
     catch(error) {
         console.error("Failed sending email:", error);
