@@ -19,6 +19,9 @@ export async function POST(req: Request) {
                 user: process.env.EMAIL_USER, //環境変数で設定
                 pass: process.env.EMAIL_PASS,
             },
+            tls: {
+                rejectUnauthorized: false,  // SSL/TLSの警告を無視する
+            },
         });
         
 
@@ -33,7 +36,7 @@ export async function POST(req: Request) {
     }
     catch(error) {
         console.error("Failed sending email:", error);
-        return NextResponse.json({ error: "Failed sending email"}, { status: 500 });
+        return NextResponse.json({ error: `Failed sending email`}, { status: 500 });
     }
 }
 

@@ -5,8 +5,8 @@ import Contact from '@/components/Contact';
 import { Box, Typography, Container, Grid, List, ListItem, ListItemText, Stack, CssBaseline } from "@mui/material";
 import { ThemeProvider } from '@mui/material';
 import theme from './theme/theme';
-import { SiPython, SiTypescript, SiRust, SiHtml5, SiCss3, SiJavascript } from "react-icons/si";
-
+import { SiPython, SiTypescript, SiRust, SiHtml5, SiCss3, SiJavascript, SiGnubash, SiC, SiPhp, SiMysql, SiNextdotjs, SiNodedotjs, SiReact, SiMui, SiGithub, SiVite, SiWordpress, SiHackthebox, SiKalilinux, SiApple, SiUbuntu } from "react-icons/si";
+import { BiLogoVisualStudio, BiLogoWindows } from 'react-icons/bi';
 
 const achievements = [
   "２週間オーストラリア語学留学",
@@ -33,14 +33,57 @@ const skills = [
 ]
 
 // スキルとアイコンの対応リスト
-const skillsWithIcons = [
-  { icon: <SiPython size={60} color="#3776AB" /> },
-  { icon: <SiTypescript size={60} color="#3178C6" /> },
-  { icon: <SiRust size={60} color="#000000" /> }, //色調節必須
-  { icon: <SiHtml5 size={60} color="#E34F26" /> },
-  { icon: <SiCss3 size={60} color="#0067C0" />},
-  { icon: <SiJavascript size={60} color="#ffff00" />},
+const skillsWithIcons1 = [
+  // プログラミング言語
+  { icon: <SiPython size={60} color="#3776AB" />, name: "Python" },
+  { icon: <SiTypescript size={60} color="#3178C6" />, name: "TypeScript" },
+  { icon: <SiRust size={60} color="#000000" />, name: "Rust" }, // Rustの色は黒
+  { icon: <SiHtml5 size={60} color="#E34F26" />, name: "HTML" },
+  { icon: <SiCss3 size={60} color="#1572B6" />, name: "CSS" },
+  { icon: <SiJavascript size={60} color="#F7DF1E" />, name: "JavaScript" },
+  { icon: <SiGnubash size={60} color="#4EAA25" />, name: "Bash" },
+    
 ];
+
+const skillsWithIcons2 = [
+  //プログラミング言語
+  { icon: <SiC size={60} color="#A8B9CC" />, name: "C" },
+  { icon: <SiPhp size={60} color="#777BB4" />, name: "PHP" },
+  { icon: <SiMysql size={60} color="#4479A1" />, name: "SQL" },
+  // フレームワーク
+  { icon: <SiNextdotjs size={60} color="#000000" />, name: "Next.js" },
+  { icon: <SiNodedotjs size={60} color="#339933" />, name: "Node.js" },
+
+  // ライブラリ
+  { icon: <SiReact size={60} color="#61DAFB" />, name: "React" },
+  { icon: <SiMui size={60} color="#007FFF" />, name: "Material UI" },
+
+  
+];
+
+const skillsWithIcons3 = [
+  // 開発ツール
+  { icon: <SiGithub size={60} color="#181717" />, name: "Git/GitHub" },
+  { icon: <SiVite size={60} color="#646CFF" />, name: "Vite" },
+  { icon: <BiLogoVisualStudio size={60} color="#5C2D91" />, name: "VSCode" },
+
+  // その他
+  { icon: <SiWordpress size={60} color="#21759B" />, name: "WordPress" },
+
+  // セキュリティ関係
+  { icon: <SiHackthebox size={60} color="#9FEF00" />, name: "TryHackMe" }, // Hack The Boxのアイコンで代用
+  { icon: <SiKalilinux size={60} color="#268BEE" />, name: "Kali Linux" },
+  { icon: <BiLogoWindows size={60} color="#0078D6" />, name: "Windows" },
+  
+];
+
+const skillsWithIcons4 = [
+  //セキュリティ関係
+  { icon: <SiApple size={60} color="#A2AAAD" />, name: "MacOS" },
+  { icon: <SiUbuntu size={60} color="#E95420" />, name: "Ubuntu" },
+];
+
+
 
 const projects = [
   "Python製インジェクション特化のファジングツール開発",
@@ -129,24 +172,58 @@ export default function Page () {
                 </Container>
               </Box>
 
-              {/* 黒線 */}
-              <Box sx={{ width: "100%", height: "4px", bgcolor: "black" }} />
+  {/* 黒線 */}
+  <Box sx={{ width: "100%", height: "4px", bgcolor: "#2A2A2A" }} />
 
-              <Box sx={{ bgcolor: "black", color: "white", py: 6 }} id="skill">
+              <Box sx={{ bgcolor: "#2A2A2A", color: "white", py: 6 }} id="skill">
                 <Container>
-                  <Typography variant="h4" sx={{ textAlign: "right", mb: 4, mr: 60 }} gutterBottom>
+                  <Typography variant="h4" sx={{ textAlign: "right", mb: 4, mr: 52 }} gutterBottom>
                     Skill
                   </Typography>
 
                   {/* 左右に分けるためのStack */}
-                  <Stack direction="row" spacing={8} justifyContent="space-between">
-                    
+                  <Stack direction="row" spacing={2} justifyContent="space-between">
+                  
+                  
                     {/* 左側：アイコンとスキル名 */}
+                    <Box sx={{ flex: 0.5 }}>
+                      <List>
+                        {skillsWithIcons1.map((skill, index) => (
+                          <ListItem key={index} >
+                            <Stack direction="column" spacing={2} sx={{ alignItems: "center", width: "80px" }} >
+                            {skill.icon} {/* アイコン */}
+                            </Stack>
+                          </ListItem>
+                        ))}
+                      </List>
+                    </Box>
+                    <Box sx={{ flex: 0.5 }}>
+                      <List>
+                        {skillsWithIcons2.map((skill, index) => (
+                          <ListItem key={index}>
+                            <Stack direction="column" spacing={2} sx={{ alignItems: "center", width: "80px"}} >
+                              {skill.icon} {/* アイコン */}
+                            </Stack>
+                          </ListItem>
+                        ))}
+                      </List>
+                    </Box>
+                    <Box sx={{ flex: 0.5 }}>
+                      <List>
+                        {skillsWithIcons3.map((skill, index) => (
+                          <ListItem key={index}>
+                            <Stack direction="column" spacing={2} sx={{ alignItems: "center", width: "80px"}} >
+                              {skill.icon} {/* アイコン */}
+                            </Stack>
+                          </ListItem>
+                        ))}
+                      </List>
+                    </Box>
                     <Box sx={{ flex: 1 }}>
                       <List>
-                        {skillsWithIcons.map((skill, index) => (
+                        {skillsWithIcons4.map((skill, index) => (
                           <ListItem key={index}>
-                            <Stack direction="column" spacing={2} >
+                            <Stack direction="column" spacing={2} sx={{ alignItems: "center", width: "80px"}} >
                               {skill.icon} {/* アイコン */}
                             </Stack>
                           </ListItem>
@@ -155,7 +232,7 @@ export default function Page () {
                     </Box>
 
                     {/* 右側：説明とスキルリスト */}
-                    <Box sx={{ flex: 1 }}>
+                    <Box sx={{ flex: 0.5 }}>
                       <Typography variant="h5" sx={{ mr: 40}} gutterBottom>
                         Programming
                       </Typography>
@@ -167,15 +244,12 @@ export default function Page () {
                         ))}
                       </List>
                     </Box>
-
                   </Stack>
                 </Container>
               </Box>
 
-
-
-              {/* 黒線 */}
-              <Box sx={{ width: "100%", height: "4px", bgcolor: "black" }} />
+  {/* 黒線 */}
+  <Box sx={{ width: "100%", height: "4px", bgcolor: "#2A2A2A" }} />
 
               {/* Project セクション（白背景） */}
               <Box sx={{ bgcolor: "white", color: "black", py: 6, mr: 80 }} id="project">
@@ -195,8 +269,8 @@ export default function Page () {
                 </Container>
               </Box>
 
-              {/* 黒線 */}
-              <Box sx={{ width: "100%", height: "4px", bgcolor: "black" }} />
+  {/* 黒線 */}
+  <Box sx={{ width: "100%", height: "4px", bgcolor: "black" }} />
 
               {/* Contact セクション（黒背景・白文字） */}
               <Box sx={{ bgcolor: "black", color: "white", py: 6, zIndex: -1}} id="contact">
