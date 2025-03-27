@@ -72,7 +72,7 @@ interface Props {
     return (
       <Box sx={{ display: 'flex' }}>
         <CssBaseline />
-        <AppBar component="nav" color=''> {/**カスタムテーマを使うこと　あと　プログラミング言語のアイコン貼り付けすること */}
+        <AppBar component="nav" color='primary'> 
           <Toolbar>
             <IconButton
               color="inherit"

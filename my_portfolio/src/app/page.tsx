@@ -2,8 +2,10 @@
 import * as React from 'react';
 import Header from "../components/Header";
 import Contact from '@/components/Contact';
-import { Box, Typography, Container, List, ListItem, ListItemText, Stack } from "@mui/material";
-import zIndex from '@mui/material/styles/zIndex';
+import { Box, Typography, Container, Grid, List, ListItem, ListItemText, Stack, CssBaseline } from "@mui/material";
+import { ThemeProvider } from '@mui/material';
+import theme from './theme/theme';
+import { SiPython, SiTypescript, SiRust, SiHtml5, SiCss3, SiJavascript } from "react-icons/si";
 
 
 const achievements = [
@@ -29,6 +31,17 @@ const skills = [
   "....etc"
 
 ]
+
+// スキルとアイコンの対応リスト
+const skillsWithIcons = [
+  { icon: <SiPython size={60} color="#3776AB" /> },
+  { icon: <SiTypescript size={60} color="#3178C6" /> },
+  { icon: <SiRust size={60} color="#000000" /> }, //色調節必須
+  { icon: <SiHtml5 size={60} color="#E34F26" /> },
+  { icon: <SiCss3 size={60} color="#0067C0" />},
+  { icon: <SiJavascript size={60} color="#ffff00" />},
+];
+
 const projects = [
   "Python製インジェクション特化のファジングツール開発",
   "Rust製インジェクション特化のファジングツール開発",
@@ -93,8 +106,11 @@ export default function Page () {
                 </Box>
               </Box>
             
+              <ThemeProvider theme={theme}>
+                  <CssBaseline />
+                  <Header />
+              </ThemeProvider>
 
-              <Header />
 
               <Box sx={{ bgcolor: "white", color: "black", py: 6,  mr: 80}} id="record">
                 <Container>
@@ -116,25 +132,47 @@ export default function Page () {
               {/* 黒線 */}
               <Box sx={{ width: "100%", height: "4px", bgcolor: "black" }} />
 
-              <Box sx={{ bgcolor: "black", color: "white", py: 6, }} id="skill">
+              <Box sx={{ bgcolor: "black", color: "white", py: 6 }} id="skill">
                 <Container>
-                    <Typography variant="h4" sx={{ textAlign: "right", pr: 51 }} gutterBottom>
-                      Skill
-                    </Typography>
-                    <Typography variant="h4" sx={{ textAlign: "right", pr: 36 }}>
-                      Programing
-                    </Typography>
-                    <List>
-                      {skills.map((skills, index) => (
-                        <ListItem key={index}>
-                          <ListItemText primary={skills}
-                             sx={{ ml: 85 }}// 文字だけを右寄せ
-                          />
-                        </ListItem>
-                      ))}
-                    </List>
+                  <Typography variant="h4" sx={{ textAlign: "right", mb: 4, mr: 60 }} gutterBottom>
+                    Skill
+                  </Typography>
+
+                  {/* 左右に分けるためのStack */}
+                  <Stack direction="row" spacing={8} justifyContent="space-between">
+                    
+                    {/* 左側：アイコンとスキル名 */}
+                    <Box sx={{ flex: 1 }}>
+                      <List>
+                        {skillsWithIcons.map((skill, index) => (
+                          <ListItem key={index}>
+                            <Stack direction="column" spacing={2} >
+                              {skill.icon} {/* アイコン */}
+                            </Stack>
+                          </ListItem>
+                        ))}
+                      </List>
+                    </Box>
+
+                    {/* 右側：説明とスキルリスト */}
+                    <Box sx={{ flex: 1 }}>
+                      <Typography variant="h5" sx={{ mr: 40}} gutterBottom>
+                        Programming
+                      </Typography>
+                      <List >
+                        {skills.map((skill, index) => (
+                          <ListItem key={index} >
+                            <ListItemText primary={skill} />
+                          </ListItem>
+                        ))}
+                      </List>
+                    </Box>
+
+                  </Stack>
                 </Container>
               </Box>
+
+
 
               {/* 黒線 */}
               <Box sx={{ width: "100%", height: "4px", bgcolor: "black" }} />
@@ -170,7 +208,7 @@ export default function Page () {
                           Contact
                         </Typography>
                         <Typography variant="h6">
-                          お仕事があれば、お願い致します。
+                          ご連絡があれば、ここにお願い致します。
                         </Typography>
                       </Box>
 
