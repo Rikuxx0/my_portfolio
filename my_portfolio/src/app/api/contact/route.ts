@@ -40,4 +40,3 @@ export async function POST(req: Request) {
 }
 
 
-//smtpプロトコルを使ってGmail送信すること
