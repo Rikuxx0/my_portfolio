@@ -4,9 +4,10 @@ import Header from "../components/Header";
 import Contact from '@/components/Contact';
 import { Box, Typography, Container, List, ListItem, ListItemText, Stack, CssBaseline } from "@mui/material";
 import { ThemeProvider } from '@mui/material';
-import theme from './theme/theme';
-import { SiPython, SiTypescript, SiRust, SiHtml5, SiCss3, SiJavascript, SiGnubash, SiC, SiPhp, SiMysql, SiNextdotjs, SiNodedotjs, SiReact, SiMui, SiGithub, SiVite, SiWordpress, SiHackthebox, SiKalilinux, SiApple, SiUbuntu } from "react-icons/si";
+import theme from './theme/theme'; 
+import { SiPython, SiTypescript, SiRust, SiHtml5, SiCss3, SiJavascript, SiGnubash, SiC, SiPhp, SiMysql, SiNextdotjs, SiNodedotjs, SiReact, SiMui, SiGithub, SiVite, SiWordpress, SiTryhackme ,SiHackthebox, SiKalilinux, SiApple, SiUbuntu } from "react-icons/si";
 import { BiLogoVisualStudio, BiLogoWindows } from 'react-icons/bi';
+import { FaAws } from 'react-icons/fa';
 
 const achievements = [
   "２週間オーストラリア語学留学",
@@ -71,7 +72,7 @@ const skillsWithIcons3 = [
   { icon: <SiWordpress size={60} color="#21759B" />, name: "WordPress" },
 
   // セキュリティ関係
-  { icon: <SiHackthebox size={60} color="#9FEF00" />, name: "TryHackMe" }, // Hack The Boxのアイコンで代用
+  { icon: <SiTryhackme size={60} color="#808080" />, name: "TryHackMe" }, // Hack The Boxのアイコンで代用
   { icon: <SiKalilinux size={60} color="#268BEE" />, name: "Kali Linux" },
   { icon: <BiLogoWindows size={60} color="#0078D6" />, name: "Windows" },
   
@@ -81,6 +82,9 @@ const skillsWithIcons4 = [
   //セキュリティ関係
   { icon: <SiApple size={60} color="#A2AAAD" />, name: "MacOS" },
   { icon: <SiUbuntu size={60} color="#E95420" />, name: "Ubuntu" },
+  { icon: <FaAws size={60} color="#808080" />, name: "AWS"},
+  { icon: <SiHackthebox size={60} color="#b8d200"/>, name: "Hackthebox"},
+  { icon: <SiReact size={60} color="#87CEEB" />, name: "React"},
 ];
 
 
@@ -283,7 +287,7 @@ export default function Page () {
                           Contact
                         </Typography>
                         <Typography variant="h6">
-                          ご連絡があれば、ここにお願い致します。
+                          ご連絡があれば、ここにお願い致します。Gmailで送信されます。
                         </Typography>
                       </Box>
 
