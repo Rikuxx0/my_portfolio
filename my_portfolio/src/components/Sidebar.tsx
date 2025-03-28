@@ -75,7 +75,7 @@ export default function Sidebar() {
               趣味でペンテスやWeb開発をしてます。現在は大学生です。
           </Typography>
           <Typography variant="body1" align='center' gutterBottom>
-              目標はOSCP、情報安全確保支援士合格、CVEを発見することです。
+              目標はOSCP合格、情報安全確保支援士合格、CVEを発見することです。
           </Typography>
         </Box>
       </Stack>
