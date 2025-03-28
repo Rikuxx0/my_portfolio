@@ -15,7 +15,7 @@ const achievements = [
   "SECCON Beginners CTF 2023 ワークショップ参加",
   "英検2級取得 (準1級CSEスコア 2186)",
   "セキュリティ・ミニキャンプ in 三重 2024 参加",
-  "TryHackMe [GUARDIAN] - 世界2825位、日本50位 (2024年12月 日本1位獲得経験あり)",
+  "TryHackMe [GUARDIAN] (世界で2780位(上位1%以下),日本で49位,2024年12月月間日本1位獲得,2025年3月日本Top50を獲得)",
   "駒澤大学グローバル・メディア・スタディーズ学部 入学予定 (2025年4月)"
 ];
 
@@ -28,7 +28,7 @@ const skills = [
   "PHP",
   "HTML/CSS",
   "SQL",
-  "....etc"
+  "Various frameworks and security tools (Burp Suite, Nmap, Rustscan, Hydra, and so on......)"
 
 ]
 
@@ -153,7 +153,8 @@ export default function Page () {
                   <CssBaseline />
                   <Header />
               </ThemeProvider>
-
+  {/* 黒線 */}
+  <Box sx={{ width: "100%", height: "0.5px", bgcolor: "#2A2A2A" }} />
 
               <Box sx={{ bgcolor: "white", color: "black", py: 6,  mr: 80}} id="record">
                 <Container>
@@ -177,7 +178,7 @@ export default function Page () {
 
               <Box sx={{ bgcolor: "#2A2A2A", color: "white", py: 6 }} id="skill">
                 <Container>
-                  <Typography variant="h4" sx={{ textAlign: "right", mb: 4, mr: 52 }} gutterBottom>
+                  <Typography variant="h3" sx={{ textAlign: "right", mb: 4, mr: 60 }} gutterBottom>
                     Skill
                   </Typography>
 
@@ -233,7 +234,7 @@ export default function Page () {
 
                     {/* 右側：説明とスキルリスト */}
                     <Box sx={{ flex: 0.5 }}>
-                      <Typography variant="h5" sx={{ mr: 40}} gutterBottom>
+                      <Typography variant="h3" sx={{ mr: 30}} gutterBottom>
                         Programming
                       </Typography>
                       <List >
@@ -278,7 +279,7 @@ export default function Page () {
                     <Stack direction="row" spacing={4} alignItems="center" justifyContent="space-between">
                       {/* 左側にテキスト */}
                       <Box sx={{ width: "40%" }}>
-                        <Typography variant="h4" gutterBottom>
+                        <Typography variant="h3" gutterBottom>
                           Contact
                         </Typography>
                         <Typography variant="h6">
