@@ -2,7 +2,7 @@
 import * as React from 'react';
 import Header from "../components/Header";
 import Contact from '@/components/Contact';
-import { Box, Typography, Container, Grid, List, ListItem, ListItemText, Stack, CssBaseline } from "@mui/material";
+import { Box, Typography, Container, List, ListItem, ListItemText, Stack, CssBaseline } from "@mui/material";
 import { ThemeProvider } from '@mui/material';
 import theme from './theme/theme';
 import { SiPython, SiTypescript, SiRust, SiHtml5, SiCss3, SiJavascript, SiGnubash, SiC, SiPhp, SiMysql, SiNextdotjs, SiNodedotjs, SiReact, SiMui, SiGithub, SiVite, SiWordpress, SiHackthebox, SiKalilinux, SiApple, SiUbuntu } from "react-icons/si";
