@@ -101,6 +101,7 @@ export default function Page () {
   return (
     <React.Fragment>
        <ThemeProvider theme={theme}>
+        <CssBaseline />
             {/*　動画の背景 */}   
               <Box
                 sx={{
@@ -155,7 +156,7 @@ export default function Page () {
               </Box>
             
              
-                  <CssBaseline />
+                  
                   <Header />
               
   {/* 黒線 */}
