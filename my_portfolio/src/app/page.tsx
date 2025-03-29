@@ -100,6 +100,7 @@ const projects = [
 export default function Page () {
   return (
     <React.Fragment>
+       <ThemeProvider theme={theme}>
             {/*　動画の背景 */}   
               <Box
                 sx={{
@@ -153,10 +154,10 @@ export default function Page () {
                 </Box>
               </Box>
             
-              <ThemeProvider theme={theme}>
+             
                   <CssBaseline />
                   <Header />
-              </ThemeProvider>
+              
   {/* 黒線 */}
   <Box sx={{ width: "100%", height: "0.5px", bgcolor: "#2A2A2A" }} />
 
@@ -298,6 +299,7 @@ export default function Page () {
                     </Stack>
                   </Container>
               </Box>
+        </ThemeProvider>
      </React.Fragment>
 
   );
