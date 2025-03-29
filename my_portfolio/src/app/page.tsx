@@ -4,10 +4,12 @@ import Header from "../components/Header";
 import Contact from '@/components/Contact';
 import { Box, Typography, Container, List, ListItem, ListItemText, Stack, CssBaseline } from "@mui/material";
 import { ThemeProvider } from '@mui/material';
-import theme from './theme/theme'; 
 import { SiPython, SiTypescript, SiRust, SiHtml5, SiCss3, SiJavascript, SiGnubash, SiC, SiPhp, SiMysql, SiNextdotjs, SiNodedotjs, SiReact, SiMui, SiGithub, SiVite, SiWordpress, SiTryhackme ,SiHackthebox, SiKalilinux, SiApple, SiUbuntu } from "react-icons/si";
 import { BiLogoVisualStudio, BiLogoWindows } from 'react-icons/bi';
 import { FaAws } from 'react-icons/fa';
+import { useMediaQuery, useTheme } from '@mui/material';
+import customcolor from './theme/theme';
+
 
 const achievements = [
   "２週間オーストラリア語学留学",
@@ -98,11 +100,17 @@ const projects = [
 
 
 export default function Page () {
+  const theme = useTheme();
+  const isMobile = useMediaQuery(theme.breakpoints.down("sm"));
+
+  
   return (
-    <React.Fragment>
-       <ThemeProvider theme={theme}>
-        <CssBaseline />
-            {/*　動画の背景 */}   
+    <>
+          {isMobile ? ( 
+            //モバイル用
+            <ThemeProvider theme={customcolor}>
+              <CssBaseline />
+                <Header />
               <Box
                 sx={{
                     position: "relative",
@@ -154,13 +162,158 @@ export default function Page () {
                     </Typography>
                 </Box>
               </Box>
-            
-             
-                  
-                  <Header />
               
+              
+        {/* 黒線 */}
+        <Box sx={{ width: "100%", height: "0.5px", bgcolor: "#2A2A2A" }} />
+
+              <Box sx={{ bgcolor: "white", color: "black", py: 3,  mr: 2 }} id="record">
+                <Container>
+                  <Box sx={{ p: 1 }}>
+                    <Typography variant="h5" gutterBottom>
+                      Record
+                    </Typography>
+                    <List>
+                      {achievements.map((achievement, index) => (
+                        <ListItem key={index}>
+                          <ListItemText primary={achievement}  />
+                        </ListItem>
+                      ))}
+                    </List>
+                  </Box>
+                </Container>
+              </Box>
+
   {/* 黒線 */}
-  <Box sx={{ width: "100%", height: "0.5px", bgcolor: "#2A2A2A" }} />
+  <Box sx={{ width: "100%", height: "4px", bgcolor: "#2A2A2A" }} />
+
+              {/* Skill セクション */}
+              <Box sx={{ bgcolor: "#2A2A2A", color: "white", py: 3 }} id="skill">
+                <Container>
+                  <Typography variant="h5" sx={{ textAlign: "left", mb: 4, mr: 2  }} gutterBottom>
+                    Skill
+                  </Typography>
+
+                  {/* 横3列に分ける */}
+                  <Stack direction="row" spacing={15} justifyContent="left">
+                    {/* 1列目 */}
+                    <Stack spacing={2} alignItems="left">
+                      {skillsWithIcons1.slice(0, 6).map((skill, index) => (
+                        <Box key={index} sx={{ textAlign: "left" }}>
+                          {skill.icon}
+                          
+                        </Box>
+                      ))}
+                    </Stack>
+
+                    {/* 2列目 */}
+                    <Stack spacing={2} alignItems="center">
+                      {skillsWithIcons2.slice(0, 6).map((skill, index) => (
+                        <Box key={index} sx={{ textAlign: "center" }}>
+                          {skill.icon}
+                          
+                        </Box>
+                      ))}
+                    </Stack>
+
+                    {/* 3列目 */}
+                    <Stack spacing={2} alignItems="right">
+                      {skillsWithIcons3.slice(0, 6).map((skill, index) => (
+                        <Box key={index} sx={{ textAlign: "right" }}>
+                          {skill.icon}
+                          
+                        </Box>
+                      ))}
+                    </Stack>
+                  </Stack>
+                </Container>
+              </Box>
+
+  {/* 黒線 */}
+  <Box sx={{ width: "100%", height: "4px", bgcolor: "black" }} />
+
+              {/* Contact セクション（黒背景・白文字） */}
+              <Box sx={{ bgcolor: "black", color: "white", py: 3, zIndex: -1}} id="contact">
+                  <Container>
+                    <Stack direction="column" spacing={4} alignItems="center" justifyContent="space-between">
+                      {/* 左側にテキスト */}
+                      <Box sx={{ width: "100%" }}>
+                        <Typography variant="h5" gutterBottom>
+                          Contact
+                        </Typography>
+                        <Typography variant="body1">
+                          ご連絡があれば、ここにお願い致します。Gmailで送信されます。
+                        </Typography>
+                      </Box>
+
+                      {/* 右側にContactフォーム */}
+                      <Box sx={{ width: "100%" }}>
+                        <Contact />
+                      </Box>
+                    </Stack>
+                  </Container>
+              </Box>
+        </ThemeProvider>
+          ) : ( 
+        //デスクトップ用
+        <ThemeProvider theme={customcolor}>
+            <CssBaseline />
+              <Header />
+              <Box
+                sx={{
+                    position: "relative",
+                    width: "100%",
+                    height: "100vh",
+                }}
+              >
+              
+                {/** 背景動画 */}
+                <video
+                  id='home'
+                  autoPlay
+                  loop
+                  muted
+                  playsInline
+                  style={{
+                    position: "absolute",
+                    top: "50%",
+                    left: "50%",
+                    width: "100%",
+                    height: "100%",
+                    objectFit: "cover",
+                    transform: "translate(-50%, -50%)",
+                    zIndex: -1,
+                  }}
+                >
+                  <source src="/videos/intro.mp4" type="video/mp4" />
+                  Your browser does not support th video tag.
+                </video>
+
+                {/**動画の上のテキスト */}
+                <Box
+                  sx={{
+                    position: "absolute",
+                    top: "50%",
+                    left: "50%",
+                    transform: "translate(-50%, -50%)",
+                    color: "white",
+                    textShadow: "1px 1px 1px rgba(141, 136, 136, 0.56), -2px -2px 3px rgba(52, 51, 51, 0.5), -2px 2px 3px rgba(49, 48, 48, 0.5), 2px -2px 3px rgba(29, 28, 28, 0.5)",
+                    textAlign: "center",
+                    zIndex: 1, //動画より前面に配置
+                  }}
+                  >
+                    <Typography variant="h3" fontWeight="bold" sx={{ mt: 0}}>
+                      Welcome to My Portfolio
+                    </Typography>
+                    <Typography variant="h5" >
+                      Exploring Security & Development
+                    </Typography>
+                </Box>
+              </Box>
+              
+              
+              {/* 黒線 */}
+              <Box sx={{ width: "100%", height: "0.5px", bgcolor: "#2A2A2A" }} />
 
               <Box sx={{ bgcolor: "white", color: "black", py: 6,  mr: 80}} id="record">
                 <Container>
@@ -190,7 +343,6 @@ export default function Page () {
 
                   {/* 左右に分けるためのStack */}
                   <Stack direction="row" spacing={2} justifyContent="space-between">
-                  
                   
                     {/* 左側：アイコンとスキル名 */}
                     <Box sx={{ flex: 0.5 }}>
@@ -300,8 +452,8 @@ export default function Page () {
                     </Stack>
                   </Container>
               </Box>
-        </ThemeProvider>
-     </React.Fragment>
+        </ThemeProvider> )}
+     </>
 
   );
 }

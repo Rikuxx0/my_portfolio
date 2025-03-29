@@ -14,6 +14,8 @@ import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
 import Button from '@mui/material/Button';
 import Sidebar from './Sidebar';
+import { useTheme } from '@mui/material';
+import { useMediaQuery } from '@mui/material';
 
 interface Props {
     /**
@@ -37,6 +39,9 @@ interface Props {
     const { window } = props;
     const [mobileOpen, setMobileOpen] = React.useState(false);
   
+    const theme = useTheme();
+    const isMobile = useMediaQuery(theme.breakpoints.down("sm")); // モバイル判定
+
     const handleDrawerToggle = () => {
       setMobileOpen((prevState) => !prevState);
     };
@@ -72,18 +77,28 @@ interface Props {
     return (
       <Box sx={{ display: 'flex' }}>
         <CssBaseline />
-        <AppBar component="nav" color='primary'> 
+        <AppBar 
+          component="nav" 
+          color='primary'
+          sx={{ 
+            maxWidth: "100%", 
+            px: 4,
+            py: 2,
+            margin: "auto",
+          }}
+        > 
           <Toolbar>
             <IconButton
               color="inherit"
               aria-label="open drawer"
               edge="start"
-              onClick={handleDrawerToggle}
               sx={{ mr: 2, display: { sm: 'none' } }}
             >
+              <Sidebar />
             </IconButton>
+          
             <Typography
-              variant="h6"
+              variant="h6" 
               component="div"
               sx={{ flexGrow: 1, display: { xs: 'none', sm: 'block' } }}
             >
