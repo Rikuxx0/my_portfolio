@@ -195,7 +195,7 @@ export default function Page () {
                   </Typography>
 
                   {/* 横3列に分ける */}
-                  <Stack direction="row" spacing={10} justifyContent="left">
+                  <Stack direction="row" spacing={11} justifyContent="left">
                     {/* 1列目 */}
                     <Stack spacing={2} alignItems="left">
                       {skillsWithIcons1.slice(0, 6).map((skill, index) => (
