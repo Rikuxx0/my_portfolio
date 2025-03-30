@@ -84,19 +84,17 @@ interface Props {
           sx={{ 
             maxWidth: "100%", 
             px: 3,
-            py: 2,
+            py: 1,
             margin: "auto",
           }}
         > 
-          <Toolbar>
+          <Toolbar >
             <IconButton
               color="inherit"
               aria-label="open drawer"
               edge="start"
               sx={{ mr: 2, display: { sm: 'none' },
                     backgroundColor: 'black', 
-                    borderRadius: '8px', // 角丸にする（オプション）
-                    padding: '8px' // 余白を追加（オプション）
                   }}
               onClick={handleDrawerToggle}
             >
