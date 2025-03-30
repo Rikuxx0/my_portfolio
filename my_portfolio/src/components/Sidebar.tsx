@@ -104,9 +104,9 @@ export default function Sidebar() {
                 // サイドバーのスタイル設定
                 '& .MuiDrawer-paper': {
                     height: 'calc(100% - 64px)', // ヘッダーの高さを差し引いた高さを設定
-                    top: '80px', // ヘッダーがある位置に合わせる
+                    top: '74px', // ヘッダーがある位置に合わせる
                 }
-            }}
+              }}
         >
             {Drawerprofile}
       </Drawer>
