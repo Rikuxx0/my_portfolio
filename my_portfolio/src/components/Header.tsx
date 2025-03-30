@@ -16,6 +16,7 @@ import Button from '@mui/material/Button';
 import Sidebar from './Sidebar';
 import { useTheme } from '@mui/material';
 import { useMediaQuery } from '@mui/material';
+import MenuIcon from '@mui/icons-material/Menu';
 
 interface Props {
     /**
@@ -56,8 +57,8 @@ interface Props {
     
     const drawer = (
       <Box onClick={handleDrawerToggle} sx={{ textAlign: 'center' }}>
-        <Typography variant="h6" sx={{ my: 2 }}>
-          MUI
+        <Typography variant="h5" sx={{ Height: "100%", my: 2 }}>
+          Portfolio
         </Typography>
         <Divider />
         <List>
@@ -82,7 +83,7 @@ interface Props {
           color='primary'
           sx={{ 
             maxWidth: "100%", 
-            px: 4,
+            px: 3,
             py: 2,
             margin: "auto",
           }}
@@ -92,18 +93,18 @@ interface Props {
               color="inherit"
               aria-label="open drawer"
               edge="start"
-              sx={{ mr: 2, display: { sm: 'none' } }}
+              sx={{ mr: 2, display: { sm: 'none' },
+                    backgroundColor: 'black', 
+                    borderRadius: '8px', // 角丸にする（オプション）
+                    padding: '8px' // 余白を追加（オプション）
+                  }}
+              onClick={handleDrawerToggle}
             >
-              <Sidebar />
+              <MenuIcon />
             </IconButton>
-          
-            <Typography
-              variant="h6" 
-              component="div"
-              sx={{ flexGrow: 1, display: { xs: 'none', sm: 'block' } }}
-            >
-              <Sidebar />
-            </Typography>
+            <Box sx={{ flexGrow: 1 }}>
+               <Sidebar />
+            </Box>
             <Box sx={{ display: { xs: 'none', sm: 'block' } }}>
               {navItems.map((item) => (
                 <Button  variant="text" key={item.id} sx={{ color: '#fff', fontFamily: "system-ui" }} onClick={() => scrollToSection(item.id)}>
