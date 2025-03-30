@@ -230,7 +230,26 @@ export default function Page () {
               </Box>
 
   {/* 黒線 */}
-  <Box sx={{ width: "100%", height: "4px", bgcolor: "black" }} />
+  <Box sx={{ width: "100%", height: "0.5px", bgcolor: "black" }} />
+
+              {/* Project セクション（白背景） */}
+              <Box sx={{ bgcolor: "white", color: "black", py: 3, mr: 2 }} id="project">
+                <Container>
+                  <Box sx={{ p: 1 }}>
+                    <Typography variant="h4" gutterBottom>
+                      Project
+                    </Typography>
+                    <List>
+                      {projects.map((projects, index) => (
+                        <ListItem key={index}>
+                          <ListItemText primary={projects} />
+                        </ListItem>
+                      ))}
+                    </List>
+                  </Box>
+                </Container>
+              </Box>
+
 
               {/* Contact セクション（黒背景・白文字） */}
               <Box sx={{ bgcolor: "black", color: "white", py: 3, zIndex: -1}} id="contact">
