@@ -35,11 +35,24 @@ export default function Sidebar() {
         />
 
 
+        
+      </Stack>
+      
+      <Stack direction="column" spacing={1}>
+        {/** SNSなどを登録する場所 */}
+        <Stack direction="row" spacing={2}>
+          <Button href="https://github.com/Rikuxx0">
+              <GitHubIcon />
+          </Button>
+        </Stack>
+
+        
         <Box
           sx={{
-            width: '100%', // レスポンシブ対応
+            //TryHackMeのプロフィール
+            width: '100%', // レスポンシブ対応 
             maxWidth: 500, // 最大幅を設定
-            height: 150, // 高さを適宜調整 150
+            height: 150, // 高さを適宜調整 
             border: 'none',
             overflow: 'hidden',
             display: 'flex',
@@ -51,22 +64,14 @@ export default function Sidebar() {
              style={{
               border: 'none', 
               width: '100%', 
-              height: '150px', // 適切な高さに調整
-              maxWidth: '333px', // 最大幅を制限
+              height: '100px', // 適切な高さに調整
+              maxWidth: '360px', // 最大幅を制限
               borderRadius: '8px' // 角丸デザイン
             }}
             ></iframe>
         </Box>
-      </Stack>
-      
-      <Stack direction="column" spacing={1}>
-        <Stack direction="row" spacing={2}>
-          <Button href="https://github.com/Rikuxx0">
-              <GitHubIcon />
-          </Button>
-        </Stack>
 
-        <Box sx={{width: '100%', maxWidth: 500}}>
+        <Box sx={{width: '100%', maxWidth: 450}}>
           <Typography variant="h4" align='center' gutterBottom>
               Hello Everyone 
           </Typography>
