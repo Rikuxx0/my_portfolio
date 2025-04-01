@@ -34,11 +34,12 @@ export default function Sidebar() {
           sx={{ width: 120, height: 120, ml: 3}}
         />
 
+
         <Box
           sx={{
             width: '100%', // レスポンシブ対応
             maxWidth: 500, // 最大幅を設定
-            height: 150, // 高さを適宜調整
+            height: 150, // 高さを適宜調整 150
             border: 'none',
             overflow: 'hidden',
             display: 'flex',
@@ -46,7 +47,15 @@ export default function Sidebar() {
             alignItems: 'center',
           }}
         >
-            <img src="https://tryhackme-badges.s3.amazonaws.com/Rikuxx.png" alt="Your Image Badge" />
+            <iframe src="https://tryhackme.com/api/v2/badges/public-profile?userPublicId=1838215"
+             style={{
+              border: 'none', 
+              width: '100%', 
+              height: '150px', // 適切な高さに調整
+              maxWidth: '333px', // 最大幅を制限
+              borderRadius: '8px' // 角丸デザイン
+            }}
+            ></iframe>
         </Box>
       </Stack>
       
