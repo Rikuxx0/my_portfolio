@@ -46,14 +46,7 @@ export default function Sidebar() {
             alignItems: 'center',
           }}
         >
-            <iframe
-              src="https://tryhackme.com/api/v2/badges/public-profile?userPublicId=1838215"
-              style={{
-                width: '100%',
-                height: '100%',
-                border: 'none',
-              }}
-            />
+            <img src="https://tryhackme-badges.s3.amazonaws.com/Rikuxx.png" alt="Your Image Badge" />
         </Box>
       </Stack>
       
