@@ -19,6 +19,7 @@ const achievements = [
   "英検2級取得 (準1級CSEスコア 2186)",
   "セキュリティ・ミニキャンプ in 三重 2024 参加",
   "TryHackMe [GUARDIAN] (世界で2780位(上位1%以下),日本で49位,2024年12月月間日本1位獲得,2025年3月日本Top50を獲得)",
+  "HackTheBox Script Kiddie Rank (2025年4月 Global Ranking #929, 日本で95位)",
   "駒澤大学グローバル・メディア・スタディーズ学部 入学予定 (2025年4月)"
 ];
 
@@ -40,7 +41,7 @@ const skillsWithIcons1 = [
   // プログラミング言語
   { icon: <SiPython size={60} color="#3776AB" />, name: "Python" },
   { icon: <SiTypescript size={60} color="#3178C6" />, name: "TypeScript" },
-  { icon: <SiRust size={60} color="#000000" />, name: "Rust" }, // Rustの色は黒
+  { icon: <SiRust size={60} color="#000000" />, name: "Rust" }, 
   { icon: <SiHtml5 size={60} color="#E34F26" />, name: "HTML" },
   { icon: <SiCss3 size={60} color="#1572B6" />, name: "CSS" },
   { icon: <SiJavascript size={60} color="#F7DF1E" />, name: "JavaScript" },
@@ -74,7 +75,7 @@ const skillsWithIcons3 = [
   { icon: <SiWordpress size={60} color="#21759B" />, name: "WordPress" },
 
   // セキュリティ関係
-  { icon: <SiTryhackme size={60} color="#808080" />, name: "TryHackMe" }, // Hack The Boxのアイコンで代用
+  { icon: <SiTryhackme size={60} color="#808080" />, name: "TryHackMe" }, 
   { icon: <SiKalilinux size={60} color="#268BEE" />, name: "Kali Linux" },
   { icon: <BiLogoWindows size={60} color="#0078D6" />, name: "Windows" },
   
@@ -86,7 +87,6 @@ const skillsWithIcons4 = [
   { icon: <SiUbuntu size={60} color="#E95420" />, name: "Ubuntu" },
   { icon: <FaAws size={60} color="#808080" />, name: "AWS"},
   { icon: <SiHackthebox size={60} color="#b8d200"/>, name: "Hackthebox"},
-  { icon: <SiReact size={60} color="#87CEEB" />, name: "React"},
 ];
 
 
