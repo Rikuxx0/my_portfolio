@@ -14,7 +14,7 @@ import customcolor from './theme/theme';
 const achievements = [
   "２週間オーストラリア語学留学",
   "CpawCTF - リバースエンジニアリング以外の全問クリア",
-  "ACSC 参加",
+  "ACSC 2023 参加",
   "SECCON Beginners CTF 2023 ワークショップ参加",
   "英検2級取得 (準1級CSEスコア 2186)",
   "セキュリティ・ミニキャンプ in 三重 2024 参加",
