@@ -20,7 +20,7 @@ const achievements = [
   "セキュリティ・ミニキャンプ in 三重 2024 参加",
   "TryHackMe [GUARDIAN] (世界で2780位(上位1%以下),日本で49位,2024年12月月間日本1位獲得,2025年3月日本Top50を獲得)",
   "HackTheBox Script Kiddie Rank (2025年4月 Global Ranking #929, 日本で95位)",
-  "駒澤大学グローバル・メディア・スタディーズ学部 入学予定 (2025年4月)"
+  "駒澤大学グローバル・メディア・スタディーズ学部 入学 (2025年4月)"
 ];
 
 const skills = [
