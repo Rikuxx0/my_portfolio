@@ -4,12 +4,19 @@ import Avatar from '@mui/material/Avatar';
 import Box from '@mui/material/Box';
 import Button from '@mui/material/Button';
 import Drawer from '@mui/material/Drawer';
+import { List, ListItem, ListItemText } from '@mui/material';
 import Stack  from '@mui/material/Stack';
 import Typography  from '@mui/material/Typography';
 import BadgeIcon from '@mui/icons-material/Badge';
 import ArrowBackIosNewIcon from '@mui/icons-material/ArrowBackIosNew';
 import GitHubIcon from '@mui/icons-material/GitHub';
 
+const interests = [
+    "・Vulnerability Assessment",
+    "・Exploit Development",
+    "・Penetration test",
+    "・Web Security"
+];
 
 
 export default function Sidebar() {
@@ -33,9 +40,6 @@ export default function Sidebar() {
           src='/my_icon.jpg'
           sx={{ width: 120, height: 120, ml: 3}}
         />
-
-
-        
       </Stack>
       
       <Stack direction="column" spacing={1}>
@@ -84,6 +88,17 @@ export default function Sidebar() {
           <Typography variant="body1" align='center' gutterBottom>
               目標はOSCP合格、情報安全確保支援士合格、CVEを発見することです。
           </Typography>
+          <Typography variant="h4" align='center' gutterBottom>
+            My Areas of Interest
+          </Typography>
+          <List sx={{ ml: '60px' }}>
+            {interests.map((interests, index) => (
+              <ListItem key={index}>
+                  <ListItemText primary={interests} />
+              </ListItem>
+                ))}
+            </List>
+
         </Box>
       </Stack>
       
