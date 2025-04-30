@@ -10,6 +10,8 @@ import Typography  from '@mui/material/Typography';
 import BadgeIcon from '@mui/icons-material/Badge';
 import ArrowBackIosNewIcon from '@mui/icons-material/ArrowBackIosNew';
 import GitHubIcon from '@mui/icons-material/GitHub';
+import { SiNotion } from "react-icons/si";
+
 
 const interests = [
     "・Vulnerability Assessment",
@@ -45,10 +47,14 @@ export default function Sidebar() {
       <Stack direction="column" spacing={1}>
         {/** SNSなどを登録する場所 */}
         <Stack direction="row" spacing={2}>
-          <Button href="https://github.com/Rikuxx0">
+          <Button size="medium" href="https://github.com/Rikuxx0">
               <GitHubIcon />
           </Button>
+          <Button size="large" href='https://miniature-vegetable-567.notion.site/Riku-Masukawa-11f5269624928079a6dec2b9c2e9a088'>
+              <SiNotion />
+          </Button>
         </Stack>
+
 
         
         <Box
