@@ -12,15 +12,17 @@ import customcolor from './theme/theme';
 
 
 const achievements = [
-  "２週間オーストラリア語学留学",
-  "CpawCTF - リバースエンジニアリング以外の全問クリア",
-  "ACSC 2023 参加",
-  "SECCON Beginners CTF 2023 ワークショップ参加",
+  "CpawCTF - リバースエンジニアリング以外の全問クリア(2023年4月)",
+  "ACSC 2023 参加(2023年4月)",
+  "２週間オーストラリア語学留学(2023年7月〜8月)",
+  "SECCON Beginners Live CTF 2023 ワークショップ参加(2023年9/3)",
   "英検2級取得 (準1級CSEスコア 2186)",
   "セキュリティ・ミニキャンプ in 三重 2024 参加",
   "TryHackMe [GUARDIAN] (世界で2780位(上位1%以下),日本で49位,2024年12月月間日本1位獲得,2025年3月日本Top50を獲得)",
   "HackTheBox Script Kiddie Rank (2025年4月 Global Ranking #872, 日本で60位)",
-  "駒澤大学グローバル・メディア・スタディーズ学部 入学 (2025年4月)"
+  "駒澤大学グローバル・メディア・スタディーズ学部 入学 (2025年4月)",
+  "駒澤大学のKomatechに加入(2025年4月)",
+  "KoamtechでJavascriptのコーチング(2025年5月)"
 ];
 
 const skills = [
@@ -94,7 +96,10 @@ const skillsWithIcons4 = [
 const projects = [
   "Python製インジェクション特化のファジングツール開発",
   "Rust製インジェクション特化のファジングツール開発",
-  "HackMAP セキュリティ、コンピュータギーカーによるコミュニティサイト兼フロントとバックエンド、インフラの可視化ソフト 開発予定",
+  "本ポートフォリオサイト",
+  "Cyber Intelligence ー ギーカー、ハッカーによるコミュニティサイト開発予定",
+  "HackMap ー フロントエンド、バックエンド連携可視化ツール開発予定(Cyber Intelligenceと連携)",
+  "KT-Komaviewのフロントエンド・バックエンド担当予定(駒澤大学の食堂の人数混雑把握アプリ)",
 ]
 
 
