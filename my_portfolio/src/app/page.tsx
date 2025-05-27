@@ -16,7 +16,8 @@ const achievements = [
   "ACSC 2023 参加(2023年4月)",
   "２週間オーストラリア語学留学(2023年7月〜8月)",
   "SECCON Beginners Live CTF 2023 ワークショップ参加(2023年9/3)",
-  "英検2級取得 (準1級CSEスコア 2186)",
+  "英検2級取得(2024年3月)",
+  "英検準１級不合格 CSE2186(2024年4月)",
   "セキュリティ・ミニキャンプ in 三重 2024 参加",
   "TryHackMe [GUARDIAN] (世界で2780位(上位1%以下),日本で49位,2024年12月月間日本1位獲得,2025年3月日本Top50を獲得)",
   "HackTheBox Script Kiddie Rank (2025年4月 Global Ranking #872, 日本で60位)",
@@ -34,8 +35,13 @@ const skills = [
   "PHP",
   "HTML/CSS",
   "SQL",
-  "Various frameworks and security tools (Burp Suite, Nmap, Rustscan, Hydra, and so on......)"
-
+  "AWS",
+  "Next.js",
+  "MaterialUI",
+  "Vercel",
+  "GitHub/Git",
+  "Docker",
+  "Penetration test tools(Rustscan, Burp Suite, ZAP etc...)"
 ]
 
 // スキルとアイコンの対応リスト
