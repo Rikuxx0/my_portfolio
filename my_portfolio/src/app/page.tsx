@@ -33,7 +33,6 @@ const skills = [
   "Bash",
   "Assembly/C language",
   "PHP",
-  "HTML/CSS",
   "SQL",
   "AWS",
   "Next.js",
