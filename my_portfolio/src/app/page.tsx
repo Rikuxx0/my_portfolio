@@ -1,4 +1,5 @@
 "use client"
+
 import * as React from 'react';
 import Header from "../components/Header";
 import Contact from '@/components/Contact';
@@ -19,7 +20,7 @@ const achievements = [
   "英検2級取得(2024年3月)",
   "英検準１級不合格 CSE2186(2024年4月)",
   "セキュリティ・ミニキャンプ in 三重 2024 参加",
-  "TryHackMe [GUARDIAN] (世界で2780位(上位1%以下),日本で49位,2024年12月月間日本1位獲得,2025年3月日本Top50を獲得)",
+  "TryHackMe [GUARDIAN] (世界で2780位,日本で49位,2024年12月月間日本1位獲得,2025年3月日本Top50を獲得)",
   "HackTheBox Script Kiddie Rank (2025年4月 Global Ranking #872, 日本で60位)",
   "駒澤大学グローバル・メディア・スタディーズ学部 入学 (2025年4月)",
   "駒澤大学のKomatechに加入(2025年4月)",
@@ -27,20 +28,21 @@ const achievements = [
 ];
 
 const skills = [
-  "Python",
-  "TypeScript",
-  "Rust",
-  "Bash",
-  "Assembly/C language",
-  "PHP",
-  "SQL",
-  "AWS",
-  "Next.js",
-  "MaterialUI",
-  "Vercel",
-  "GitHub/Git",
-  "Docker",
-  "Penetration test tools(Rustscan, Burp Suite, ZAP etc...)"
+  "Programing languages",
+  "・Python TypeScript Rust Bash HTML/CSS SQL",
+  "Framework",
+  "・Next.js  Node.js ",
+  "UI Library",
+  "・Material UI Shadcn/ui",
+  "Baas",
+  "・Supabase MicroCMS",
+  "Others",
+  `
+    ・Git/GitHub Vite Visual Studio Code Nginx PostgreSQL Amazan Web Service(EC2, Route53) Cloudflare Oracle Cloud
+  `,
+  "Security",
+  "・TryHackMe HackTheBox Kali Linux",
+  "・A lot of exploit tools on kail Linux",
 ]
 
 // スキルとアイコンの対応リスト
@@ -104,7 +106,7 @@ const projects = [
   "本ポートフォリオサイト",
   "Cyber Intelligence ー ギーカー、ハッカーによるコミュニティサイト開発予定",
   "HackMap ー フロントエンド、バックエンド連携可視化ツール開発予定(Cyber Intelligenceと連携)",
-  "KT-Komaviewのフロントエンド・バックエンド担当予定(駒澤大学の食堂の人数混雑把握アプリ)",
+  "The Cyber World ー 擬似サイバー攻撃を制限するネタツール開発予定(Cyber Intelligenceと連携)",
 ]
 
 
@@ -371,10 +373,10 @@ export default function Page () {
                   </Typography>
 
                   {/* 左右に分けるためのStack */}
-                  <Stack direction="row" spacing={2} justifyContent="space-between">
+                  <Stack direction="row" spacing={5} justifyContent="space-between">
                   
                     {/* 左側：アイコンとスキル名 */}
-                    <Box sx={{ flex: 0.5 }}>
+                    <Box sx={{ flex: 0.05 }}>
                       <List>
                         {skillsWithIcons1.map((skill, index) => (
                           <ListItem key={index} >
@@ -385,7 +387,7 @@ export default function Page () {
                         ))}
                       </List>
                     </Box>
-                    <Box sx={{ flex: 0.5 }}>
+                    <Box sx={{ flex: 0.05 }}>
                       <List>
                         {skillsWithIcons2.map((skill, index) => (
                           <ListItem key={index}>
@@ -396,7 +398,7 @@ export default function Page () {
                         ))}
                       </List>
                     </Box>
-                    <Box sx={{ flex: 0.5 }}>
+                    <Box sx={{ flex: 0.05 }}>
                       <List>
                         {skillsWithIcons3.map((skill, index) => (
                           <ListItem key={index}>
@@ -407,7 +409,7 @@ export default function Page () {
                         ))}
                       </List>
                     </Box>
-                    <Box sx={{ flex: 1 }}>
+                    <Box sx={{ flex: 0.05 }}>
                       <List>
                         {skillsWithIcons4.map((skill, index) => (
                           <ListItem key={index}>
@@ -420,10 +422,7 @@ export default function Page () {
                     </Box>
 
                     {/* 右側：説明とスキルリスト */}
-                    <Box sx={{ flex: 0.5 }}>
-                      <Typography variant="h3" sx={{ mr: 30}} gutterBottom>
-                        Programming
-                      </Typography>
+                    <Box sx={{ flex: 1 }}>
                       <List >
                         {skills.map((skill, index) => (
                           <ListItem key={index} >
