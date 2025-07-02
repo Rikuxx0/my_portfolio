@@ -38,7 +38,7 @@ const skills = [
   "・Supabase MicroCMS",
   "Others",
   `
-    ・Git/GitHub Vite Visual Studio Code Nginx PostgreSQL Amazan Web Service(EC2, Route53) Cloudflare Oracle Cloud
+    ・Git/GitHub Vite Visual Studio Code Nginx PostgreSQL Amazan Web Service(EC2, Route53) 
   `,
   "Security",
   "・TryHackMe HackTheBox Kali Linux",
