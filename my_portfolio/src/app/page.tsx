@@ -5,7 +5,7 @@ import Header from "../components/Header";
 import Contact from '@/components/Contact';
 import { Box, Typography, Container, List, ListItem, ListItemText, Stack, CssBaseline } from "@mui/material";
 import { ThemeProvider } from '@mui/material';
-import { SiPython, SiTypescript, SiRust, SiHtml5, SiCss3, SiJavascript, SiGnubash, SiC, SiPhp, SiMysql, SiNextdotjs, SiNodedotjs, SiReact, SiMui, SiGithub, SiVite, SiWordpress, SiTryhackme ,SiHackthebox, SiKalilinux, SiApple, SiUbuntu } from "react-icons/si";
+import { SiPython, SiTypescript, SiRust, SiHtml5, SiCss3, SiJavascript, SiGnubash, SiC, SiPhp, SiMysql, SiNextdotjs, SiNodedotjs, SiReact, SiMui, SiGithub, SiVite, SiWordpress, SiTryhackme ,SiHackthebox, SiKalilinux, SiApple, SiUbuntu, SiMetasploit, SiSupabase, SiZod } from "react-icons/si";
 import { BiLogoVisualStudio, BiLogoWindows } from 'react-icons/bi';
 import { FaAws } from 'react-icons/fa';
 import { useMediaQuery, useTheme } from '@mui/material';
@@ -21,10 +21,11 @@ const achievements = [
   "英検準１級不合格 CSE2186(2024年4月)",
   "セキュリティ・ミニキャンプ in 三重 2024 参加",
   "TryHackMe [GUARDIAN] (世界で2780位,日本で49位,2024年12月月間日本1位獲得,2025年3月日本Top50を獲得)",
-  "HackTheBox Script Kiddie Rank (2025年4月 Global Ranking #872, 日本で60位)",
+  "HackTheBox Hacker Rank (2025年7月 Global Ranking #860, 日本で50位)",
   "駒澤大学グローバル・メディア・スタディーズ学部 入学 (2025年4月)",
   "駒澤大学のKomatechに加入(2025年4月)",
-  "KoamtechでJavascriptのコーチング(2025年5月)"
+  "KoamtechでJavascriptのコーチング(2025年5月)",
+  "藝苑祭のWeb開発(2025年7月)"
 ];
 
 const skills = [
@@ -54,7 +55,7 @@ const skillsWithIcons1 = [
   { icon: <SiHtml5 size={60} color="#E34F26" />, name: "HTML" },
   { icon: <SiCss3 size={60} color="#1572B6" />, name: "CSS" },
   { icon: <SiJavascript size={60} color="#F7DF1E" />, name: "JavaScript" },
-  { icon: <SiGnubash size={60} color="#4EAA25" />, name: "Bash" },
+  { icon: <SiGnubash size={60} color="#C0C0C0" />, name: "Bash" },
     
 ];
 
@@ -78,24 +79,27 @@ const skillsWithIcons3 = [
   // 開発ツール
   { icon: <SiGithub size={60} color="#181717" />, name: "Git/GitHub" },
   { icon: <SiVite size={60} color="#646CFF" />, name: "Vite" },
-  { icon: <BiLogoVisualStudio size={60} color="#5C2D91" />, name: "VSCode" },
+  { icon: <BiLogoVisualStudio size={60} color="#1572B6" />, name: "VSCode" },
 
   // その他
   { icon: <SiWordpress size={60} color="#21759B" />, name: "WordPress" },
 
   // セキュリティ関係
-  { icon: <SiTryhackme size={60} color="#808080" />, name: "TryHackMe" }, 
+  { icon: <SiTryhackme size={60} color="#FF0000" />, name: "TryHackMe" }, 
   { icon: <SiKalilinux size={60} color="#268BEE" />, name: "Kali Linux" },
   { icon: <BiLogoWindows size={60} color="#0078D6" />, name: "Windows" },
   
 ];
 
 const skillsWithIcons4 = [
+  { icon: <SiSupabase size={60} color="#2E8B57"/>, name: "Supabase"},
+  { icon: <SiZod size={60} color="#1572B6" />, name: "Zod"},
   //セキュリティ関係
   { icon: <SiApple size={60} color="#A2AAAD" />, name: "MacOS" },
   { icon: <SiUbuntu size={60} color="#E95420" />, name: "Ubuntu" },
   { icon: <FaAws size={60} color="#808080" />, name: "AWS"},
   { icon: <SiHackthebox size={60} color="#b8d200"/>, name: "Hackthebox"},
+  { icon: <SiMetasploit size={60} color="#1572B6" />, name: "Metasploit" }
 ];
 
 
@@ -104,9 +108,12 @@ const projects = [
   "Python製インジェクション特化のファジングツール開発",
   "Rust製インジェクション特化のファジングツール開発",
   "本ポートフォリオサイト",
+  "駒澤大学藝苑祭のWeb開発",
   "Cyber Intelligence ー ギーカー、ハッカーによるコミュニティサイト開発予定",
   "HackMap ー フロントエンド、バックエンド連携可視化ツール開発予定(Cyber Intelligenceと連携)",
   "The Cyber World ー 擬似サイバー攻撃を制限するネタツール開発予定(Cyber Intelligenceと連携)",
+  "Koma-showcase - サークル一覧検索、ゼミの一覧検索など、学内の検索可能なメディアをすべて合わせたwebページのフロントエンド開発",
+  "Komaview - 食堂の人数混雑把握アプリ開発のセキュリティ担当予定",
 ]
 
 
@@ -368,7 +375,7 @@ export default function Page () {
 
               <Box sx={{ bgcolor: "#2A2A2A", color: "white", py: 6 }} id="skill">
                 <Container>
-                  <Typography variant="h3" sx={{ textAlign: "right", mb: 4, mr: 60 }} gutterBottom>
+                  <Typography variant="h3" sx={{ textAlign: "right", mb: 4, mr: 67 }} gutterBottom>
                     Skill
                   </Typography>
 
