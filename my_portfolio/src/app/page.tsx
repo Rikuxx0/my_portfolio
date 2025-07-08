@@ -114,6 +114,7 @@ const projects = [
   "The Cyber World ー 擬似サイバー攻撃を制限するネタツール開発予定(Cyber Intelligenceと連携)",
   "Koma-showcase - サークル一覧検索、ゼミの一覧検索など、学内の検索可能なメディアをすべて合わせたwebページのフロントエンド開発",
   "Komaview - 食堂の人数混雑把握アプリ開発のセキュリティ担当予定",
+  "詳しい情報はプロフィールマークのNotionからご覧ください!"
 ]
 
 
