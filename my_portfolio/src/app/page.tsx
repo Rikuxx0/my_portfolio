@@ -13,7 +13,6 @@ import customcolor from './theme/theme';
 
 
 const achievements = [
-  "CpawCTF - リバースエンジニアリング以外の全問クリア(2023年4月)",
   "ACSC 2023 参加(2023年4月)",
   "２週間オーストラリア語学留学(2023年7月〜8月)",
   "SECCON Beginners Live CTF 2023 ワークショップ参加(2023年9/3)",
@@ -23,9 +22,11 @@ const achievements = [
   "TryHackMe [GUARDIAN] (世界で2780位,日本で49位,2024年12月月間日本1位獲得,2025年3月日本Top50を獲得)",
   "HackTheBox Hacker Rank (2025年7月 Global Ranking #860, 日本で50位)",
   "駒澤大学グローバル・メディア・スタディーズ学部 入学 (2025年4月)",
-  "駒澤大学のKomatechに加入(2025年4月)",
-  "KoamtechでJavascriptのコーチング(2025年5月)",
-  "藝苑祭のWeb開発(2025年7月)"
+  "駒澤大学のKomatech プログラミング研究会に加入(2025年4月)",
+  "Koamtechでプログラマー育成計画を始動(2025年5月)",
+  "藝苑祭のWeb開発(2025年7月)",
+  "CpawCTF全問クリア・PicoCTFやってた(2025年7月)",
+  "SECCON Beginner CTF 2025  チームRABBLE306位 計13問中、個人で6問のフラグ取得(2025年7月)",
 ];
 
 const skills = [
