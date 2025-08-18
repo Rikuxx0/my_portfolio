@@ -15,19 +15,20 @@ import customcolor from './theme/theme';
 const achievements = [
   "ACSC 2023 参加(2023年4月)",
   "２週間オーストラリア語学留学(2023年7月〜8月)",
-  "SECCON Beginners Live CTF 2023 ワークショップ参加(2023年9/3)",
+  "SECCON Beginners Live CTF 2023 ワークショップ参加(2023年9月)",
   "英検2級取得(2024年3月)",
   "英検準１級不合格 CSE2186(2024年4月)",
-  "セキュリティ・ミニキャンプ in 三重 2024 参加",
-  "TryHackMe [GUARDIAN] (世界で2780位,日本で49位,2024年12月月間日本1位獲得,2025年3月日本Top50を獲得)",
-  "HackTheBox Hacker Rank (2025年7月 Global Ranking #860, 日本で50位)",
+  "セキュリティ・ミニキャンプ in 三重 2024 参加(2024年7月 高校3年頃に参加)",
+  "TryHackMe [0xE][GUARDIAN] (世界で2780位,日本で49位,2024年12月月間日本1位獲得,2025年3月日本Top50を獲得)",
   "駒澤大学グローバル・メディア・スタディーズ学部 入学 (2025年4月)",
   "駒澤大学のKomatech プログラミング研究会に加入(2025年4月)",
   "Koamtechでプログラマー育成計画を始動(2025年5月)",
+  "HackTheBox Hacker Rank (2025年7月 Global Ranking #860, 日本で50位)",
   "藝苑祭のWeb開発(2025年7月)",
   "CpawCTF全問クリア・PicoCTFやってた(2025年7月)",
   "SECCON Beginner CTF 2025  チームRABBLE306位 計13問中、個人で6問のフラグ取得(2025年7月)",
   "【全国学生対抗】Qiita × FastDOCTOR Health Tech Hackathon 参加 (2025年8月)",
+  "セキュリティ・キャンプ 2025 ミニ（東京開催）Bトラック 参加"
 ];
 
 const skills = [

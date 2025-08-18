@@ -18,7 +18,8 @@ const interests = [
     "・Vulnerability Assessment",
     "・Exploit Development",
     "・Penetration test",
-    "・Web Security"
+    "・Web Security",
+    "・Web Development"
 ];
 
 
@@ -60,7 +61,6 @@ export default function Sidebar() {
           <Button size='large' href="https://qiita.com/rikum0730">
             <SiQiita />
           </Button>
-
         </Stack>
 
 
@@ -89,18 +89,18 @@ export default function Sidebar() {
             ></iframe>
         </Box>
 
-        <Box sx={{width: '100%', maxWidth: 450}}>
+        <Box sx={{width: '100%', maxWidth: 580}}>
           <Typography variant="h4" align='center' gutterBottom>
               Hello Everyone 
           </Typography>
           <Typography variant="body1" align='center' gutterBottom>
-              My name is Riku Masukawa. I'm Security geeker and work on various tools, software and pentration test. Nice to meet you.
+              My name is Riku Masukawa. I'm Security Geeker and Web Programmer. I belong to Komazawa University and work on Programming and Pentration test.
           </Typography>
           <Typography variant="body1" align='center' gutterBottom>
-              趣味でペンテスやWeb開発をしてます。現在は大学生です。
+              初めまして、大学でWeb開発、趣味でセキュリティを勉強してます。
           </Typography>
           <Typography variant="body1" align='center' gutterBottom>
-              目標はOSCP合格、情報安全確保支援士合格、CVEを発見することです。
+              将来は、DevSecOpsエンジニア兼ペネトレーションテスターになりたいです。
           </Typography>
           <Typography variant="h4" align='center' gutterBottom>
             My Areas of Interest
@@ -115,9 +115,6 @@ export default function Sidebar() {
 
         </Box>
       </Stack>
-      
-
-      
     </div>
   );  
 
