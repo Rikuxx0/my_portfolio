@@ -28,7 +28,8 @@ const achievements = [
   "CpawCTF全問クリア・PicoCTFやってた(2025年7月)",
   "SECCON Beginner CTF 2025  チームRABBLE306位 計13問中、個人で6問のフラグ取得(2025年7月)",
   "【全国学生対抗】Qiita × FastDOCTOR Health Tech Hackathon 参加 (2025年8月)",
-  "セキュリティ・キャンプ 2025 ミニ（東京開催）Bトラック 参加"
+  "セキュリティ・キャンプ 2025 ミニ（東京開催）Bトラック 参加",
+  "GMOサイバーセキュリティ byイエラエ株式会社 27卒向けソースコード診断部門インターン 参加 (2025年8月)"
 ];
 
 const skills = [
@@ -113,8 +114,8 @@ const projects = [
   "本ポートフォリオサイト",
   "駒澤大学藝苑祭のWeb開発",
   "体調Do？ - 【全国学生対抗】Qiita × FastDOCTOR Health Tech Hackathonの時の作品 ",
-  "Cyber Intelligence ー ギーカー、ハッカーによるコミュニティサイト開発予定",
-  "Koma-showcase - サークル一覧検索、ゼミの一覧検索など、学内の検索可能なメディアをすべて合わせたwebページのフロントエンド開発",
+  "Cyber Intelligence ー ギーカー、ハッカーによるコミュニティサイト開発(テスト版)",
+  "Koma-showcase - サークル一覧検索、ゼミの一覧検索など、学内の検索可能なメディアをすべて合わせたwebページのフロントエンド開発予定",
   "Komaview - 食堂の人数混雑把握アプリ開発のセキュリティ担当予定",
   "詳しい情報はプロフィールマークのNotionからご覧ください!"
 ]

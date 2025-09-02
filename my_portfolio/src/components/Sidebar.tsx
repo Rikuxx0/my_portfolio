@@ -11,6 +11,7 @@ import BadgeIcon from '@mui/icons-material/Badge';
 import ArrowBackIosNewIcon from '@mui/icons-material/ArrowBackIosNew';
 import GitHubIcon from '@mui/icons-material/GitHub';
 import { SiNotion, SiWantedly, SiQiita } from "react-icons/si";
+import { FaBug } from "react-icons/fa";
 
 
 
@@ -60,6 +61,9 @@ export default function Sidebar() {
           </Button>
           <Button size='large' href="https://qiita.com/rikum0730">
             <SiQiita />
+          </Button>
+          <Button size='large' href="https://issuehunt.io/profiles/457326d7-b727-45c3-9824-4b18b2916994">
+            <FaBug />
           </Button>
         </Stack>
 
